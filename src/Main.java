@@ -2,6 +2,7 @@ public class Main {
     public static void main(String[] args) {
         primiPiatti();
         Secondi();
+        Desserts();
         bevande();
     }
     public static void primiPiatti() {
@@ -34,7 +35,21 @@ public class Main {
         tofuAllaSiciliana.getDescrizione();
         tofuAllaSiciliana.getPrezzo();
     }
+    public static void Desserts(){
+        Desserts Tortinidiagrumi = new Desserts("Tortino di agrumi realizzate con olio di girasole ed olio essenziale di arancio", 6.00);
+        Desserts Crostatadifrutta = new Desserts("Composto da una base di pasta frolla ricoperto con confettura", 7.00);
+        Desserts Tiramisùvegano = new Desserts("alternativa preparata con crema di cocco, caffè, biscotti vegan e cacao.", 5.00);
+        Desserts Tortacioccolatofondenteepera = new Desserts("sublime fusione di cioccolato fondente e dolcezza della pera in una torta", 8.00);
 
+        Tortinidiagrumi.getDescrizione();
+        Tortinidiagrumi.getPrezzo();
+        Crostatadifrutta.getDescrizione();
+        Crostatadifrutta.getPrezzo();
+        Tiramisùvegano.getDescrizione();
+        Tiramisùvegano.getPrezzo();
+        Tortacioccolatofondenteepera.getDescrizione();
+        Tortacioccolatofondenteepera.getPrezzo();
+    }
 
 
 
