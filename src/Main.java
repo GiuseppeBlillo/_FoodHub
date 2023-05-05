@@ -1,5 +1,8 @@
 public class Main {
     public static void main(String[] args) {
+
+        //TODO qui dobbiamo creare gli oggetti e stampare il menù
+
         primiPiatti();
         Secondi();
         Desserts();
@@ -36,6 +39,8 @@ public class Main {
         tofuAllaSiciliana.getPrezzo();
     }
     public static void Desserts(){
+
+        //TODO mai chiamare in maiscolo gli oggetti e le variabili(scrivere in camelCase)
         Desserts Tortinidiagrumi = new Desserts("Tortino di agrumi realizzate con olio di girasole ed olio essenziale di arancio", 6.00);
         Desserts Crostatadifrutta = new Desserts("Composto da una base di pasta frolla ricoperto con confettura", 7.00);
         Desserts Tiramisùvegano = new Desserts("alternativa preparata con crema di cocco, caffè, biscotti vegan e cacao.", 5.00);

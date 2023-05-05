@@ -1,4 +1,6 @@
 public class Desserts {
+
+    //TODO riguardare il cleaning code: field (prima i final), costruttore, getter e setter e poi il resto
     String descrizione;
     double prezzo;
 
