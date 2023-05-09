@@ -66,7 +66,7 @@ public class Main {
         Bevande birra = new Bevande("3 luppoli", 5.00);
         Bevande bibite = new Bevande("Coca-Cola, Sprite, Fanta", 2.00);
 
-        birra.getPrezzo();
-        vino_bianco.getDescrizione();
+        birra.printPrice();
+        vino_bianco.printDescription();
     }
 }
