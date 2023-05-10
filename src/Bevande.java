@@ -1,6 +1,5 @@
 public class Bevande extends Menu {
-    public Bevande(String description, double price) {
-        super(description, price);
+    public Bevande(String name, String description) {
+        super(name, description);
     }
-
 }

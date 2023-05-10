@@ -60,13 +60,12 @@ public class Main {
 
 
     public static void bevande(){
-        Bevande acqua = new Bevande("acqua naturale o gassata", 5.0);
-        Bevande vino_rosso = new Bevande ("uva pesta",85.99);
-        Bevande vino_bianco = new Bevande("uva pesta", 83.99);
-        Bevande birra = new Bevande("3 luppoli", 5.00);
-        Bevande bibite = new Bevande("Coca-Cola, Sprite, Fanta", 2.00);
 
-        birra.printPrice();
-        vino_bianco.printDescription();
+    Bevande vino_bianco = new Bevande("Vino della cantina","uva pesta");
+    Bevande birra = new Bevande("Becks","3 l,uppoli e con pomodoro, pomo'doro e l'aria di pomodoro");
+
+    birra.printPrice();
+    vino_bianco.printDescr();
+    vino_bianco.printName();
     }
 }
