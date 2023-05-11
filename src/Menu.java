@@ -1,57 +1,53 @@
 public class Menu {
-    private String name,description;
-    private double price;
+    private String name;
+    public String description;
+    public boolean isGlutenFree;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public boolean isGlutenFree() {
+        return isGlutenFree;
+    }
+
+    public void setGlutenFree(boolean glutenFree) {
+        isGlutenFree = glutenFree;
+    }
 
     public Menu(String name, String description) {
         this.name = name;
         this.description = description;
     }
-    public void setName(String name) {
-        this.name = name;
-    }
-    public String getName() {
-        return name;
-    }
-    public void setDescription(String description) {
-        this.description = description;
-    }
-    public String getDescription() {
-        return description;
-    }
-    enum ingredienti{
-        POMODORO(0.5);
 
-        private double ingPrice;
-        ingredienti (double ingPrice){
-            this.ingPrice = ingPrice;
+    public Menu(String name, String description, boolean isGlutenFree) {
+        this.name = name;
+        this.description = description;
+        this.isGlutenFree = isGlutenFree;
+    }
+
+    public enum menu{
+        PRIMI,SECONDI,DESSERT;
+        double setMenuPrice(double price){
+            switch (this){
+                case PRIMI -> {price += 3.00;}
+                case SECONDI -> { price += 2.00;}
+                case DESSERT ->{price += 2.50;}
+                default -> {price += 1.50;}
+            }
+            return price;
         }
-        public double getIngPrice(){
-            return ingPrice;
-        }
-    }
-    public static double countPrice(String description){
-        double totPrice= 0.0;
-        String[] ingredients = description.split("[\\s|;|\n|!|@|#|$|&|%|=]");
-        for (String in :ingredients){
-            try{
-                totPrice+=ingredienti.valueOf(in.trim().toUpperCase()).getIngPrice();
-            } catch (Exception e){}
-        }
-        return totPrice;
-    }
-    public double getPrice() {
-        return price;
-    }
-    public void setPrice(double price) {
-        this.price = price;
-    }
-    public void printPrice(){
-        System.out.println(countPrice(getDescription()) + " €");
-    }
-    public void printDescr(){
-        System.out.println(getDescription());
-    }
-    public void printName(){
-        System.out.println(getName());
     }
 }
