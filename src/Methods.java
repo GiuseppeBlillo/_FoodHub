@@ -1,7 +1,7 @@
 interface Methods {
     double augPrice();
     void printPrice();
-    double finalPrice();
+    String finalPrice();
     void printFinalPrice();
 
 }

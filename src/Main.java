@@ -36,18 +36,25 @@ public class Main {
         //AGGIUNTA DELLE LISTE PER LE PORTATE
         List<Primi> primiPiatti = new ArrayList<>();
         List<Secondi> listaSecondi = new ArrayList<>();
+        List<Bevande> listaBevande = new ArrayList<>();
 
         //AGGIUNTA DEI PRIMI
         Primi spaghetti = new Primi("Spaghetti aglio,olio e peperoncino","Spaghetti saltati su olio extravergine, con base di aglio e peperoncino", false);
         Primi amalfitana = new Primi("Spaghetti all'Amalfitana","Spaghetti con posa di pomodoro, insaporiti di erbe domestiche", false);
         Primi orechiette = new Primi("Orecchiette con porcini e seitan","Tipica pasta fresca fatta in casa, con porcini raccolti nei nostri boschi. Il tutto arricchito del nostro miglior seitan", true);
-        Primi arcobaleno = new Primi("Risotto  Arcobaleno","Risotto con verdure colorate, ricoperto da una soffice creme fraiche di soia", true);
+        Primi arcobaleno = new Primi("Risotto Arcobaleno","Risotto con verdure colorate, ricoperto da una soffice creme fraiche di soia", true);
 
         //AGGIUNTA DEI SECONDI
         Secondi felafel = new Secondi("Felafel di Ceci", "Polpette di legumi speziate e fritte in olio alto-oleico", true );
         Secondi tempeh = new Secondi("Tempeh Croccanti","Semi di soia fermentati avvolti in foglie di banano", true );
         Secondi polpette = new Secondi("Polpette di Muscolo","Polpette di farina di grano e verdure di stagione", false );
         Secondi tofu = new Secondi("Tofu alla Siciliana","Tofu marinato, con aggiunta di melanzane, pomodoro ciliegino e olive nere", true);
+
+        // AGGIUNTA DELLE BEVANDE
+        Bevande b1 = new Bevande("Acqua", "acqua minerale o gassata", 1.50);
+        Bevande b2 = new Bevande("Vino", "vino bianco o rosso", 4.50);
+        Bevande b3 = new Bevande("Tisane", "tisane al ginseng, ", 2.50);
+        Bevande b4 = new Bevande("Birra", "birra artigianale, a km 0", 3.50);
 
         primiPiatti.add(spaghetti);
         primiPiatti.add(amalfitana);
@@ -57,16 +64,24 @@ public class Main {
         listaSecondi.add(tempeh);
         listaSecondi.add(polpette);
         listaSecondi.add(tofu);
+        listaBevande.add(b1);
+        listaBevande.add(b2);
+        listaBevande.add(b3);
+        listaBevande.add(b4);
 
         //AGGIUNTA DI UN PRINT PER CAPIRE (lol)
-        //p1.printFinalPrice();
-       // p2.printPrice();
-
+        polpette.printFinalPrice();
+        spaghetti.printPrice();
         for (Primi prim: primiPiatti){
             System.out.println(prim.getName() + " " + prim.finalPrice() + "€");
         }
+
         for (Secondi sec: listaSecondi){
             System.out.println(sec.getName() + " " + sec.finalPrice() + "€");
+        }
+
+        for (Bevande bev: listaBevande){
+            System.out.println(bev.getName() + " " + bev.finalPrice() + "€");
         }
     }
 }

@@ -39,12 +39,13 @@ public class Menu {
     }
 
     public enum menu{
-        PRIMI,SECONDI,DESSERT;
+        PRIMI,SECONDI,DESSERT,COPERTO;
         double setMenuPrice(double price){
             switch (this){
                 case PRIMI -> {price += 3.00;}
-                case SECONDI -> { price += 2.00;}
+                case SECONDI -> { price += 3.00;}
                 case DESSERT ->{price += 2.50;}
+                case COPERTO ->{price += 2.50;}
                 default -> {price += 1.50;}
             }
             return price;

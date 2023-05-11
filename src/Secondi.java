@@ -24,16 +24,15 @@ public class Secondi extends Menu implements Methods {
         System.out.println(x.format(augPrice()) + "€");
     }
     @Override
-    public double finalPrice() {
+    public String finalPrice() {
         double basePrice = augPrice();
         double impPrice = menu.SECONDI.setMenuPrice(basePrice);
         double extraPrice = this.isGlutenFree ? 0.0 : 2.0;
         DecimalFormat x = new DecimalFormat("#.00");
-        return Double.parseDouble(x.format(impPrice + extraPrice));
+        return x.format(impPrice + extraPrice);
     }
     @Override
     public void printFinalPrice() {
-        DecimalFormat x = new DecimalFormat("#.00");
         System.out.println(finalPrice() + "€");
     }
 }
