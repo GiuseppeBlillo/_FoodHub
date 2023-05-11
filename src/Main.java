@@ -36,6 +36,7 @@ public class Main {
         //AGGIUNTA DELLE LISTE PER LE PORTATE
         List<Primi> primiPiatti = new ArrayList<>();
         List<Secondi> listaSecondi = new ArrayList<>();
+        List<Desserts> listaDesserts = new ArrayList<>();
         List<Bevande> listaBevande = new ArrayList<>();
 
         //AGGIUNTA DEI PRIMI
@@ -49,6 +50,12 @@ public class Main {
         Secondi tempeh = new Secondi("Tempeh Croccanti","Semi di soia fermentati avvolti in foglie di banano", true );
         Secondi polpette = new Secondi("Polpette di Muscolo","Polpette di farina di grano e verdure di stagione", false );
         Secondi tofu = new Secondi("Tofu alla Siciliana","Tofu marinato, con aggiunta di melanzane, pomodoro ciliegino e olive nere", true);
+
+        //AGGIUNTA DEI DESSERTS
+        Desserts tortini = new Desserts("Tortino di Agrumi","Tortino di agrumi realizzate con olio di girasole ed olio essenziale di arancio",false);
+        Desserts crostata = new Desserts("Crostata di Frutta","Composto da una base di pasta frolla senza glutine ricoperto con confettura",true);
+        Desserts tiramisu = new Desserts("Tiramisu Vegano","alternativa preparata con crema di cocco, caffè, biscotti vegan e cacao.",true);
+        Desserts torta = new Desserts("Torta al Cioccolato fondente e Pera","sublime fusione di cioccolato fondente e dolcezza della pera in una torta",false);
 
         // AGGIUNTA DELLE BEVANDE
         Bevande b1 = new Bevande("Acqua", "acqua minerale o gassata", 1.50);
@@ -64,6 +71,10 @@ public class Main {
         listaSecondi.add(tempeh);
         listaSecondi.add(polpette);
         listaSecondi.add(tofu);
+        listaDesserts.add(tortini);
+        listaDesserts.add(crostata);
+        listaDesserts.add(tiramisu);
+        listaDesserts.add(torta);
         listaBevande.add(b1);
         listaBevande.add(b2);
         listaBevande.add(b3);
@@ -78,6 +89,10 @@ public class Main {
 
         for (Secondi sec: listaSecondi){
             System.out.println(sec.getName() + " " + sec.finalPrice() + "€");
+        }
+
+        for (Desserts des: listaDesserts){
+            System.out.println(des.getName() + " " + des.finalPrice() + "€");
         }
 
         for (Bevande bev: listaBevande){
