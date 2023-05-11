@@ -1,11 +1,11 @@
 import java.text.DecimalFormat;
 import java.util.regex.Pattern;
-public class Primi extends Menu implements Methods {
-    public Primi(String name, String description, boolean isGlutenFree) {
+public class Secondi extends Menu implements Methods {
+    public Secondi(String name, String description, boolean isGlutenFree) {
         super(name, description, isGlutenFree);
     }
 
-    public Primi(String name, String description) {
+    public Secondi(String name, String description) {
         super(name, description);
     }
     @Override
@@ -26,7 +26,7 @@ public class Primi extends Menu implements Methods {
     @Override
     public double finalPrice() {
         double basePrice = augPrice();
-        double impPrice = menu.PRIMI.setMenuPrice(basePrice);
+        double impPrice = menu.SECONDI.setMenuPrice(basePrice);
         double extraPrice = this.isGlutenFree ? 0.0 : 2.0;
         DecimalFormat x = new DecimalFormat("#.00");
         return Double.parseDouble(x.format(impPrice + extraPrice));
@@ -34,6 +34,6 @@ public class Primi extends Menu implements Methods {
     @Override
     public void printFinalPrice() {
         DecimalFormat x = new DecimalFormat("#.00");
-        System.out.println(finalPrice() + "0 €");
+        System.out.println(finalPrice() + "€");
     }
 }

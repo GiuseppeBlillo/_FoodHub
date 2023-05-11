@@ -3,8 +3,6 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        //CREARE OGGETTI E STAMPARE TUTTO
-
         //AGGIUNTA DEGLI INGREDIENTI
         Ingredienti.addIng("olio",0.50);
         Ingredienti.addIng("aglio",0.30);
@@ -35,30 +33,40 @@ public class Main {
         Ingredienti.addIng("polpette",3.10);
         Ingredienti.addIng("arancio",1.90);
 
-        //AGGIUNTA DI UNA LISTA PER LE PORTATE
+        //AGGIUNTA DELLE LISTE PER LE PORTATE
         List<Primi> primiPiatti = new ArrayList<>();
-        //List<Secondi> listaSecondiPiatti = new ArrayList<>();
+        List<Secondi> listaSecondi = new ArrayList<>();
+
+        //AGGIUNTA DEI PRIMI
         Primi spaghetti = new Primi("Spaghetti aglio,olio e peperoncino","Spaghetti saltati su olio extravergine, con base di aglio e peperoncino", false);
         Primi amalfitana = new Primi("Spaghetti all'Amalfitana","Spaghetti con posa di pomodoro, insaporiti di erbe domestiche", false);
         Primi orechiette = new Primi("Orecchiette con porcini e seitan","Tipica pasta fresca fatta in casa, con porcini raccolti nei nostri boschi. Il tutto arricchito del nostro miglior seitan", true);
         Primi arcobaleno = new Primi("Risotto  Arcobaleno","Risotto con verdure colorate, ricoperto da una soffice creme fraiche di soia", true);
+
         //AGGIUNTA DEI SECONDI
-        //Secondi p1 = new Secondi("Carne di manzo","deliziosa carne di manzo con olio e pomodoro", true);
-        //Secondi p2 = new Secondi("Carne di pollo","sublime carne di pollo con olio, impanata con farina di ceci");
+        Secondi felafel = new Secondi("Felafel di Ceci", "Polpette di legumi speziate e fritte in olio alto-oleico", true );
+        Secondi tempeh = new Secondi("Tempeh Croccanti","Semi di soia fermentati avvolti in foglie di banano", true );
+        Secondi polpette = new Secondi("Polpette di Muscolo","Polpette di farina di grano e verdure di stagione", false );
+        Secondi tofu = new Secondi("Tofu alla Siciliana","Tofu marinato, con aggiunta di melanzane, pomodoro ciliegino e olive nere", true);
 
         primiPiatti.add(spaghetti);
         primiPiatti.add(amalfitana);
         primiPiatti.add(orechiette);
         primiPiatti.add(arcobaleno);
-        //listaSecondiPiatti.add(p1);
-        //listaSecondiPiatti.add(p2);
+        listaSecondi.add(felafel);
+        listaSecondi.add(tempeh);
+        listaSecondi.add(polpette);
+        listaSecondi.add(tofu);
 
         //AGGIUNTA DI UN PRINT PER CAPIRE (lol)
         //p1.printFinalPrice();
        // p2.printPrice();
-        System.out.println(spaghetti.augPrice());
-       // for (Secondi sec: listaSecondiPiatti){
-      //      System.out.println(sec.getName() + " " + sec.finalPrice() + "€");
-       // }
+
+        for (Primi prim: primiPiatti){
+            System.out.println(prim.getName() + " " + prim.finalPrice() + "€");
+        }
+        for (Secondi sec: listaSecondi){
+            System.out.println(sec.getName() + " " + sec.finalPrice() + "€");
+        }
     }
 }
