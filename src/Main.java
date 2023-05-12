@@ -98,5 +98,11 @@ public class Main {
         for (Bevande bev: listaBevande){
             System.out.println(bev.getName() + " " + bev.finalPrice() + "€");
         }
+        Desserts desert = new Desserts("sss","sss");
+        Desserts desserts2 = new Desserts("sss", "ddd",true);
+
+        boolean isGlutenFree = desert.isGlutenFree;
+
+        boolean isGlutenFree1 = desserts2.isGlutenFree;
     }
 }

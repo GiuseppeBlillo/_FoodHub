@@ -1,7 +1,11 @@
 import java.text.DecimalFormat;
 
-public class Bevande extends Menu implements Methods {
+
+//TODO b bevande è un menù?
+public class Bevande extends Menu implements PriceInterface {
     private double price;
+
+    //TODO il costruttore del padre deve sempre implementare i campi del padre più altri suoi
     public Bevande(String name, String description) {
         super(name, description);
     }

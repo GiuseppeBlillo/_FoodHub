@@ -3,6 +3,8 @@ public class Menu {
     public String description;
     public boolean isGlutenFree;
 
+    //TODO ha una portata o un insieme di portate?
+
     public String getName() {
         return name;
     }
@@ -38,6 +40,8 @@ public class Menu {
         this.isGlutenFree = isGlutenFree;
     }
 
+    //TODO ragazzi gli enum non servono per questo, la logica va messa dentro il menù che è la classe che calcaloa il prezzo
+    //TODO MenuEnum
     public enum menu{
         PRIMI,SECONDI,DESSERT,COPERTO;
         double setMenuPrice(double price){

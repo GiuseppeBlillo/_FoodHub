@@ -1,6 +1,6 @@
 import java.text.DecimalFormat;
 import java.util.regex.Pattern;
-public class Desserts extends Menu implements Methods {
+public class Desserts extends Menu implements PriceInterface {
     public Desserts(String name, String description, boolean isGlutenFree) {
         super(name, description, isGlutenFree);
     }

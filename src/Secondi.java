@@ -1,6 +1,6 @@
 import java.text.DecimalFormat;
 import java.util.regex.Pattern;
-public class Secondi extends Menu implements Methods {
+public class Secondi extends Menu implements PriceInterface {
     public Secondi(String name, String description, boolean isGlutenFree) {
         super(name, description, isGlutenFree);
     }

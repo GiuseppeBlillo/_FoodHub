@@ -1,4 +1,4 @@
-interface Methods {
+interface PriceInterface {
     double augPrice();
     void printPrice();
     String finalPrice();

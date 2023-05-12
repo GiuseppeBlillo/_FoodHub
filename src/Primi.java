@@ -1,6 +1,6 @@
 import java.text.DecimalFormat;
 import java.util.regex.Pattern;
-public class Primi extends Menu implements Methods {
+public class Primi extends Menu implements PriceInterface {
     public Primi(String name, String description, boolean isGlutenFree) {
         super(name, description, isGlutenFree);
     }
@@ -8,6 +8,10 @@ public class Primi extends Menu implements Methods {
     public Primi(String name, String description) {
         super(name, description);
     }
+
+    //TODO niente chiamate statiche e cerchiamo di lavorare con le liste e gli oggetti,
+    //TODO questa cosa se mettiamo una lista di enum ingrediente ognuno con il proprio prezzo
+    // non c'è bisogno di fare chiamate statiche
     @Override
     public double augPrice() {
         double totPrice = 0.0;
@@ -16,7 +20,8 @@ public class Primi extends Menu implements Methods {
             if (Ingredienti.getIngredients().get(ing) != null) {
                 totPrice += Ingredienti.getIngredients().get(ing);
             }
-        }return totPrice;
+        }
+        return totPrice;
     }
     @Override
     public void printPrice() {
