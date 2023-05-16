@@ -58,7 +58,27 @@ public class Ristorante {
     public static void main(String[] args) {
 
         Ristorante daLillo = new Ristorante("Da Lillo");
-
+        Menu menuAntipasto = new Menu("Antipasti");
+        Portata insalataDimare = new Portata("Insalata di Mare", "Insalata di mare con seppie, gamberi e verdure", 12.00);
+        Portata cozzeEVongole = new Portata("Cozze E Vongole", "Impepata di cozze e vongole", 10.00);
+        Portata scampi = new Portata("Scampi", "Crudità di scampi, 3 pz", 8.00);
+        Portata pesceAlgratin = new Portata("Gratinato di Pesce", "Pescato del giorno al gratin, con aggiunta di scampi", 14.00);
+        Portata bruschetta = new Portata("Bruschetta", "Tipica bruschetta con aglio tritato fino, origano, olio e pomodorini", 6.00);
+        Portata fritturaMista = new Portata("Frittura Mista di Mare", "Frittura di mare con calamaretti, gamberetti e cipolla fritta", 10.00);
+        Portata salmoneEAliciMarinate = new Portata("Salmone e Alici Marinate", "Un filetto di salmone fresco affumicato servito con alici marinate", 9.00);
+        Portata tagliereSalumiEFormaggi = new Portata("Tagliere Salumi E Formaggi", "Salumi di stagione con tipici formaggi locali", 16.00);
+        Portata insalataMista = new Portata("Insalata Mista", "Insalata mista di radicchio, rucola e lattuga iceberg", 6.50);
+        Portata patatineFritte = new Portata("Patatine Fritte", "Frittura di patate con buccia", 6.00);
+        menuAntipasto.addPortata(insalataMista);
+        menuAntipasto.addPortata(insalataDimare);
+        menuAntipasto.addPortata(cozzeEVongole);
+        menuAntipasto.addPortata(scampi);
+        menuAntipasto.addPortata(pesceAlgratin);
+        menuAntipasto.addPortata(bruschetta);
+        menuAntipasto.addPortata(fritturaMista);
+        menuAntipasto.addPortata(salmoneEAliciMarinate);
+        menuAntipasto.addPortata(tagliereSalumiEFormaggi);
+        menuAntipasto.addPortata(patatineFritte);
         Menu menuPrimiDiTerra = new Menu("Primi Piatti di terra");
         Portata pastaCarbonara = new Portata("Pasta alla Carbonara", "Pasta con uovo,formaggio e guanciale", 10.00);
         Portata cacioEPepe = new Portata("Pasta cacio e pepe", "Pasta condita con pepe condita con cacio", 10.00);
@@ -86,6 +106,7 @@ public class Ristorante {
         menuPrimiDiMare.addPortata(linguineVongoleELimone);
         menuPrimiDiMare.addPortata(mezziPaccheri);
 
+        daLillo.addmenu(menuAntipasto);
         daLillo.addmenu(menuPrimiDiTerra);
         daLillo.addmenu(menuPrimiDiMare);
 
