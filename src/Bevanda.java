@@ -1,21 +1,12 @@
-
-public class Portata {
+public class Bevanda {
     private String name;
     private String description;
     private double price;
 
-    public Portata(String name, String description, double price) {
+    public Bevanda(String name, String description, double price) {
         this.name = name;
-        this.description = description;
+        this.description= description;
         this.price = price;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public String getName() {
@@ -32,5 +23,13 @@ public class Portata {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
