@@ -13,6 +13,7 @@ public class Ristorante {
     public void addmenu(Menu y){
         this.MenuRistorante.add(y);
     }
+
     /*public void printMenu(){
         for(Menu i : getMenuRistorante()){
             System.out.println(i.getName());
@@ -105,13 +106,40 @@ public class Ristorante {
         menuPrimiDiMare.addPortata(linguineScoglio);
         menuPrimiDiMare.addPortata(linguineVongoleELimone);
         menuPrimiDiMare.addPortata(mezziPaccheri);
+        Menu secondiDiMare = new Menu("Secondi piatti di mare");
+        Portata frittoMisto = new Portata("Fritto Misto", "La nostra frittura di calamari, gamberi e paranza con maionese", 20.00);
+        Portata ombrina = new Portata("Ombrina", "Ombrina alla piastra, crema di fave, bietola scottata, millefoglie di patate", 25.00);
+        Portata tonno = new Portata("Tonno", "Tonno scottato, caponata, patate dauphine", 22.00);
+        Portata grigliataDiPesce = new Portata("Grigliata di pesce", "Pescato del giorno grigliato con gamberoni, tranci di calamaro e gamberonni", 17.00);
+        Portata polpo = new Portata("Polpo alla brace", "Tenero polpo cotto alla brace", 15.00);
+        secondiDiMare.addPortata(frittoMisto);
+        secondiDiMare.addPortata(ombrina);
+        secondiDiMare.addPortata(tonno);
+        secondiDiMare.addPortata(grigliataDiPesce);
+        secondiDiMare.addPortata(polpo);
+        Menu secondiTerra = new Menu("Secondi terra");
+        Portata tagliataDiManzo = new Portata("Tagliata di Manzo", "Tagliato di manzo con taglio largo ai ferri",14.00);
+        Portata controfiletto = new Portata("Controfiletto", "Controfiletto di manzo cotto a bassa temperatura, cipollotto scottato, crema di patate al tartufo, fondo bruno",22.00);
+        Portata tomahawk = new Portata("Tomahawk", "Tomahawk bistecca servita con verdure grigliate",65.00);
+        Portata pancettaTesa = new Portata("Pancetta Tesa", "Pancia di maiale sardo cotto a bassa temperatura, crema di finocchi, belga scottata",17.00);
+        Portata grigliataMistaDiCarne = new Portata("Grigliata Mista", "Grigliata mista di maiale, pollo e manzo",17.00);
+        secondiTerra.addPortata(tagliataDiManzo);
+        secondiTerra.addPortata(controfiletto);
+        secondiTerra.addPortata(tomahawk);
+        secondiTerra.addPortata(pancettaTesa);
+        secondiTerra.addPortata(grigliataMistaDiCarne);
 
         daLillo.addmenu(menuAntipasto);
         daLillo.addmenu(menuPrimiDiTerra);
         daLillo.addmenu(menuPrimiDiMare);
+        daLillo.addmenu(secondiDiMare);
+        daLillo.addmenu(secondiTerra);
 
 
-        System.out.println("\nEcco a voi il nostro Menu:");
+
+
+
+
         daLillo.printAllMenu();
 
     }
