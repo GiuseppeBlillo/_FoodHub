@@ -1,4 +1,3 @@
-
 public class Portata {
     private String name;
     private String description;

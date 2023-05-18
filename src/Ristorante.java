@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.List;
-
 public class Ristorante {
     private String name;
     private List<Menu> MenuRistorante;
@@ -9,18 +8,15 @@ public class Ristorante {
         this.MenuRistorante = new ArrayList<>();
         this.name = name;
     }
-
     public void addmenu(Menu y){
         this.MenuRistorante.add(y);
     }
 
-    /*public void printMenu(){
+    public void printMenu(){
         for(Menu i : getMenuRistorante()){
             System.out.println(i.getName());
         }
     }
-
-     */
     public void printAllMenu(){
         System.out.println(String.format("%-60s %-80s","",this.name));
         System.out.println("");
@@ -143,6 +139,55 @@ public class Ristorante {
         dessert.addPortata(tiramisu);
         dessert.addPortata(milleFoglie);
         dessert.addPortata(seadaSarda);
+        Menu listaBirreArtigianali = new Menu("Birre Artigianali");
+        Bevanda sardinian = new Bevanda("Sardinian Pale Ale","Pale Ale 0,50cl",12.00);
+        Bevanda sardinianIpa = new Bevanda("Sardinian Ipa","IPA . 0,50cl",12.00);
+        Bevanda sexyPompia = new Bevanda("Sexy Pompia","Fruit Beer . 0,50cl",12.00);
+        Bevanda frieska = new Bevanda("Frieska","Bière Blanche . 0,75cl",22.00);
+        Bevanda verblonde = new Bevanda("BB Verblonde","Italian Grape Ale (IGA), alla sapa da uve Vermentino . 0,75cl",22.00);
+        listaBirreArtigianali.addBevanda(sardinian);
+        listaBirreArtigianali.addBevanda(sardinianIpa);
+        listaBirreArtigianali.addBevanda(sexyPompia);
+        listaBirreArtigianali.addBevanda(frieska);
+        listaBirreArtigianali.addBevanda(verblonde);
+        Menu viniBianchi = new Menu("Vini Bianchi Nazionali");
+        Bevanda fianoDiAvellino = new Bevanda("Fiano d'Avellino- G.Marsella","Fiano di Avellino",40.00);
+        Bevanda carbonareInama = new Bevanda("Carbonare Inama","Soave",40.00);
+        Bevanda vulcaiaNaia = new Bevanda("Vulcaia Naia","Sauvignon Veneto",34.00);
+        Bevanda frusBianco = new Bevanda("Frus bianco","Friuli",35.00);
+        Bevanda carricanteCalabretta = new Bevanda("Carricante Calabretta","Sicilia",30.00);
+        Bevanda sauvignonOberkerschbaum = new Bevanda("Sauvignon Oberkerschbaum J. Hoffstatter","Sauvignon - Trentino Alto Adige",45.00);
+        Bevanda vogelmaierMoscato = new Bevanda("Vogelmaier Moscato giallo A. Lageder","Moscato giallo - Magré Trentino Alto Adige",30.00);
+        Bevanda gewurztraminer = new Bevanda("Am Sand Gewurztraminer A. Lagerer","Magré Trentino Alto Adige",40.00);
+        Bevanda derthonaVignetiMassa = new Bevanda("Derthona Vigneti Massa","Timorasso - Monleale Piemonte",40.00);
+        viniBianchi.addBevanda(fianoDiAvellino);
+        viniBianchi.addBevanda(carbonareInama);
+        viniBianchi.addBevanda(vulcaiaNaia);
+        viniBianchi.addBevanda(frusBianco);
+        viniBianchi.addBevanda(carricanteCalabretta);
+        viniBianchi.addBevanda(sauvignonOberkerschbaum);
+        viniBianchi.addBevanda(vogelmaierMoscato);
+        viniBianchi.addBevanda(gewurztraminer);
+        viniBianchi.addBevanda(derthonaVignetiMassa);
+        Menu viniRossi = new Menu("Vini Rossi Nazionali");
+        Bevanda barolo = new Bevanda("Barolo Villero 2012 Oddero","La Morra - Piemonte",85.00);
+        Bevanda barberaDAlba = new Bevanda("Barbera d’Alba Eugenio Bocchino","Piobesi D'Alba",33.00);
+        Bevanda pinotNeroTrattman = new Bevanda("Pinot nero Trattman Girlan","Trentino Alto Adige",65.00);
+        Bevanda galardi = new Bevanda("Terra di Lavoro 2013/2014 Galardi","Aglianico,Piedirosso - Sessa Aurunca Campania",65.00);
+        Bevanda guidoAlbertoSanGuido = new Bevanda("Guido Alberto Tenute San Guido","Cabernet Sauvignon,Merlot - Bolgheri Toscana",75.00);
+        Bevanda volteOrnellaia = new Bevanda("Le Volte dell’Ornellaia","Merlot,Sangiovese,Cabernet Sauvignon – Bolgheri Toscana",45.00);
+        Bevanda serreNuoveOrnellaia = new Bevanda("Le Serre Nuove dell’Ornellaia 2016","Cabernet Sauvignon,Merlot,Cabernet Franc,Petit Verdot Bolgheri - Toscana",75.00);
+        Bevanda ornellaia = new Bevanda("Ornellaia 2014","Cabernet Sauvignon,Merlot,Cabernet Franc,Petit Verdot Bolgheri Toscana",280.00);
+        Bevanda solaiaAntinori = new Bevanda("Solaia Antinori 1999/2008","Cabernet Sauvignon,Sangiovese,Cabernet Franc San Casciano - Toscana",350.00);
+        viniRossi.addBevanda(barolo);
+        viniRossi.addBevanda(barberaDAlba);
+        viniRossi.addBevanda(pinotNeroTrattman);
+        viniRossi.addBevanda(galardi);
+        viniRossi.addBevanda(guidoAlbertoSanGuido);
+        viniRossi.addBevanda(volteOrnellaia);
+        viniRossi.addBevanda(serreNuoveOrnellaia);
+        viniRossi.addBevanda(ornellaia);
+        viniRossi.addBevanda(solaiaAntinori);
 
         daLillo.addmenu(menuAntipasto);
         daLillo.addmenu(menuPrimiDiTerra);
@@ -150,11 +195,9 @@ public class Ristorante {
         daLillo.addmenu(secondiDiMare);
         daLillo.addmenu(secondiTerra);
         daLillo.addmenu(dessert);
-
-
-
-
-
+        daLillo.addmenu(listaBirreArtigianali);
+        daLillo.addmenu(viniBianchi);
+        daLillo.addmenu(viniRossi);
 
         daLillo.printAllMenu();
 

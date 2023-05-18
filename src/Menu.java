@@ -1,29 +1,30 @@
 import java.util.ArrayList;
 import java.util.List;
-
 public class Menu {
     private String name;
     private List<Portata> portataList;
     private List<Bevanda> bevandaList;
 
-    /*public void printPortata(){
+    public void printPortata(){
         for (Portata i : getPortataList()){
             System.out.println(i.getName() +" "+ i.getPrice() + "€");
         }
     }
+
     public void printBevanda(){
         for (Bevanda i : getBevandaList()){
             System.out.println(i.getName() +" "+ i.getPrice() + "€");
         }
     }
 
-     */
     public void addBevanda(Bevanda x){
         this.bevandaList.add(x);
     }
+
     public void addPortata(Portata p) {
         this.portataList.add(p);
     }
+
     public Menu(String name) {
         this.name = name;
         this.portataList = new ArrayList<>();
