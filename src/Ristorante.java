@@ -63,7 +63,7 @@ public class Ristorante {
         Portata insalataDimare = new Portata("Insalata di Mare", "Insalata di mare con seppie, gamberi e verdure", 12.00);
         Portata cozzeEVongole = new Portata("Cozze E Vongole", "Impepata di cozze e vongole", 10.00);
         Portata scampi = new Portata("Scampi", "Crudità di scampi, 3 pz", 8.00);
-        Portata pesceAlgratin = new Portata("Gratinato di Pesce", "Pescato del giorno al gratin, con aggiunta di scampi", 14.00);
+        Portata pesceAlGratin = new Portata("Gratinato di Pesce", "Pescato del giorno al gratin, con aggiunta di scampi", 14.00);
         Portata bruschetta = new Portata("Bruschetta", "Tipica bruschetta con aglio tritato fino, origano, olio e pomodorini", 6.00);
         Portata fritturaMista = new Portata("Frittura Mista di Mare", "Frittura di mare con calamaretti, gamberetti e cipolla fritta", 10.00);
         Portata salmoneEAliciMarinate = new Portata("Salmone e Alici Marinate", "Un filetto di salmone fresco affumicato servito con alici marinate", 9.00);
@@ -74,7 +74,7 @@ public class Ristorante {
         menuAntipasto.addPortata(insalataDimare);
         menuAntipasto.addPortata(cozzeEVongole);
         menuAntipasto.addPortata(scampi);
-        menuAntipasto.addPortata(pesceAlgratin);
+        menuAntipasto.addPortata(pesceAlGratin);
         menuAntipasto.addPortata(bruschetta);
         menuAntipasto.addPortata(fritturaMista);
         menuAntipasto.addPortata(salmoneEAliciMarinate);
@@ -128,12 +128,28 @@ public class Ristorante {
         secondiTerra.addPortata(tomahawk);
         secondiTerra.addPortata(pancettaTesa);
         secondiTerra.addPortata(grigliataMistaDiCarne);
+        Menu dessert = new Menu("Dessert");
+        Portata cassata = new Portata("Cassata siciliana","Leggerissimo dolce siciliano",4.00);
+        Portata cannolo = new Portata("Cannolo siciliano","Dolce con chantillea, pistacchio e granella di pistacchio",5.00);
+        Portata semifreddoTorrone = new Portata("Semifreddo al Torrone","Morbido torrone con ricattura di cacao",6.00);
+        Portata tortino = new Portata("Tortino al cioccolato","Tortino al cioccolato con cuore fondente caldo",9.00);
+        Portata tiramisu = new Portata("Tiramisu","Tiramisu classico",9.00);
+        Portata milleFoglie = new Portata("Millefoglie","Millefoglie, crema pasticcera, frutta fresca",9.00);
+        Portata seadaSarda = new Portata("Seada Sarda","Seada tradizionale sarda, miele, croccante alle mandorle",9.00);
+        dessert.addPortata(cassata);
+        dessert.addPortata(cannolo);
+        dessert.addPortata(semifreddoTorrone);
+        dessert.addPortata(tortino);
+        dessert.addPortata(tiramisu);
+        dessert.addPortata(milleFoglie);
+        dessert.addPortata(seadaSarda);
 
         daLillo.addmenu(menuAntipasto);
         daLillo.addmenu(menuPrimiDiTerra);
         daLillo.addmenu(menuPrimiDiMare);
         daLillo.addmenu(secondiDiMare);
         daLillo.addmenu(secondiTerra);
+        daLillo.addmenu(dessert);
 
 
 
