@@ -4,7 +4,9 @@ public abstract class Prodotto {
     protected String name;
     protected String description;
     protected double price;
-    private String tipo;
+
+    //TODO sistemare
+    private TipoProdottoEnum tipo;
 
     public Prodotto(String name, String description, double price, String tipo) {
         this.name = name;
@@ -45,4 +47,7 @@ public abstract class Prodotto {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
+
+
+    //TODO inserire metodo di stampa
 }

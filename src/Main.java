@@ -1,7 +1,5 @@
 import ProdottiInVendita.Bevanda;
 import ProdottiInVendita.Portata;
-import ProdottiInVendita.Prodotto;
-import ProdottiInVendita.TipoProdotto;
 
 public class Main {
     public static void main(String[] args) {

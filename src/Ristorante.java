@@ -1,7 +1,7 @@
 import ProdottiInVendita.Bevanda;
 import ProdottiInVendita.Portata;
 import ProdottiInVendita.Prodotto;
-import ProdottiInVendita.TipoProdotto;
+import ProdottiInVendita.TipoProdottoEnum;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,11 +63,11 @@ public class Ristorante {
         }
     }
 
-    public void printPlateByType(String p){
+    public void printPlateByType(TipoProdottoEnum tipoProdottoEnum){
         System.out.println("\n" + "Ecco la lista di portate richieste:"+ "\n");
         for (Menu i : menu){
             for (Prodotto x : i.getProdottoList()){
-                if (x.getTipo() == p.toLowerCase()){
+                if (x.getTipo() == TipoProdottoEnum.DESSERT){
                     System.out.println(stringFormat(x.getName(), x.getDescription(), x.getPrice()));
                 }
             }
