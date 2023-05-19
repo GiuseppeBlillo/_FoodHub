@@ -1,7 +1,3 @@
-package ProdottiInVendita;
-
-import ProdottiInVendita.Bevanda;
-import ProdottiInVendita.Portata;
 import ProdottiInVendita.Prodotto;
 
 import java.util.ArrayList;
@@ -15,11 +11,6 @@ public class Menu {
         this.name = name;
         this.prodottoList = new ArrayList<>();
     }
-
-    public void addProdotto(Prodotto p) {
-        this.prodottoList.add(p);
-    }
-
 
     public String getName() {
         return name;
@@ -35,5 +26,9 @@ public class Menu {
 
     public void setProdottoList(List<Prodotto> prodottoList) {
         this.prodottoList = prodottoList;
+    }
+
+    public void addProdotto(Prodotto p) {
+        this.prodottoList.add(p);
     }
 }
