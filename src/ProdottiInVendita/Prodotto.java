@@ -4,13 +4,13 @@ public abstract class Prodotto {
     protected String name;
     protected String description;
     protected double price;
-    private TipoPortata tipoPortata;
+    private String tipo;
 
-    public Prodotto(String name, String description, double price, TipoPortata tipoPortata) {
+    public Prodotto(String name, String description, double price, String tipo) {
         this.name = name;
         this.description = description;
         this.price = price;
-        this.tipoPortata=tipoPortata;
+        this.tipo = tipo;
     }
 
     public String getName() {
@@ -37,12 +37,12 @@ public abstract class Prodotto {
         this.price = price;
     }
 
-    public TipoPortata getTipoPortata() {
-        return tipoPortata;
+
+    public String getTipo() {
+        return tipo;
     }
 
-    public void setTipoPortata(TipoPortata tipoPortata) {
-        this.tipoPortata = tipoPortata;
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
-
 }
