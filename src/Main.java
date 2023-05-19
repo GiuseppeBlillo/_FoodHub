@@ -177,7 +177,7 @@ public class Main {
         daLillo.addMenu(viniBianchi);
         daLillo.addMenu(viniRossi);
 
-        //daLillo.printAllMenu();
+        daLillo.printAllMenu();
 
         daLillo.printPlateByType(TipoPortata.SECONDO);
         
