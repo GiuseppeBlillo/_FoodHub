@@ -180,10 +180,6 @@ public class Main {
         daLillo.printAllMenu();
 
         daLillo.printPlateByType(TipoPortata.SECONDO);
-        
-        
-        
-
 
     }
 }
