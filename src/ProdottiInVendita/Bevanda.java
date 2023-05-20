@@ -1,9 +1,9 @@
 package ProdottiInVendita;
 
-public class Bevanda extends Prodotto {
+public class Bevanda extends Portata {
 
-    public Bevanda(String name, String description, double price,String tipo) {
-        super (name,description,price,tipo);
+    public Bevanda(String name, String description, double price) {
+        super (name,description,price);
     }
 
 }
