@@ -1,6 +1,6 @@
 package ProdottiInVendita;
 
-public enum TipoProdottoEnum {
+public enum TipoProdotto {
     ANTIPASTO("antipasto"),
     PRIMO("primo"),
     SECONDO("secondo"),
@@ -9,7 +9,7 @@ public enum TipoProdottoEnum {
 
     private String tipoProdotto;
 
-    TipoProdottoEnum(String tipoProdotto) {
+    TipoProdotto(String tipoProdotto) {
         this.tipoProdotto = tipoProdotto;
     }
 

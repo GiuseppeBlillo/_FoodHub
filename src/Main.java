@@ -1,185 +1,185 @@
-import ProdottiInVendita.Bevanda;
-import ProdottiInVendita.Portata;
+import Miscelleneous.MenuAllaCarta;
+import Miscelleneous.Ristorante;
+import ProdottiInVendita.*;
+
+import javax.sound.sampled.Port;
 
 public class Main {
     public static void main(String[] args) {
 
-        Ristorante daLillo = new Ristorante("Da Lillo");
+        Ristorante r1 = new Ristorante("•._.••´¯``•.¸¸.•`  \uD83C\uDF54 \uD83C\uDF5F \uD83E\uDDC1 \uD83E\uDD54\uD83E\uDD54\uD83E\uDD54  R I S T O R A N T E    D A    L I L L O  \uD83E\uDD54\uD83E\uDD54\uD83E\uDD54 \uD83E\uDDC1 \uD83C\uDF5F \uD83C\uDF54  `•.¸¸.•´´¯`••._.•");
 
-        Menu menuAntipasto = new Menu("Antipasti");
+        MenuAllaCarta menuA = new MenuAllaCarta("Antipasti:");
 
-        Portata insalataDimare = new Portata("Insalata di Mare", "Insalata di mare con seppie, gamberi e verdure", 12.00, "antipasto");
-        Portata cozzeEVongole = new Portata("Cozze E Vongole", "Impepata di cozze e vongole", 10.00, "antipasto");
-        Portata scampi = new Portata("Scampi", "Crudità di scampi, 3 pz", 8.00, "antipasto");
-        Portata pesceAlGratin = new Portata("Gratinato di Pesce", "Pescato del giorno al gratin, con aggiunta di scampi", 14.00, "antipasto");
-        Portata bruschetta = new Portata("Bruschetta", "Tipica bruschetta con aglio tritato fino, origano, olio e pomodorini", 6.00, "antipasto");
-        Portata fritturaMista = new Portata("Frittura Mista di Mare", "Frittura di mare con calamaretti, gamberetti e cipolla fritta", 10.00, "antipasto");
-        Portata salmoneEAliciMarinate = new Portata("Salmone e Alici Marinate", "Un filetto di salmone fresco affumicato servito con alici marinate", 9.00, "antipasto");
-        Portata tagliereSalumiEFormaggi = new Portata("Tagliere Salumi E Formaggi", "Salumi di stagione con tipici formaggi locali", 16.00, "antipasto");
-        Portata insalataMista = new Portata("Insalata Mista", "Insalata mista di radicchio, rucola e lattuga iceberg", 6.50, "antipasto");
-        Portata patatineFritte = new Portata("Patatine Fritte", "Frittura di patate con buccia", 6.00, "antipasto");
+        Antipasto a1 = new Antipasto("Insalata di Mare", "Insalata di mare con seppie, gamberi e verdure", 12.00);
+        Antipasto a2 = new Antipasto("Cozze E Vongole", "Impepata di cozze e vongole", 10.00);
+        Antipasto a3 = new Antipasto("Scampi", "Crudità di scampi, 3 pz", 8.00);
+        Antipasto a4 = new Antipasto("Gratinato di Pesce", "Pescato del giorno al gratin, con aggiunta di scampi", 14.00);
+        Antipasto a5 = new Antipasto("Bruschetta", "Tipica bruschetta con aglio tritato fino, origano, olio e pomodorini", 6.00);
+        Antipasto a6 = new Antipasto("Frittura Mista di Mare", "Frittura di mare con calamaretti, gamberetti e cipolla fritta", 10.00);
+        Antipasto a7 = new Antipasto("Salmone e Alici Marinate", "Un filetto di salmone fresco affumicato servito con alici marinate", 9.00);
+        Antipasto a8 = new Antipasto("Tagliere Salumi E Formaggi", "Salumi di stagione con tipici formaggi locali", 16.00);
+        Antipasto a9 = new Antipasto("Insalata Mista", "Insalata mista di radicchio, rucola e lattuga iceberg", 6.50);
+        Antipasto a10 = new Antipasto("Patatine Fritte", "Frittura di patate con buccia", 6.00);
 
-        menuAntipasto.addProdotto(insalataMista);
-        menuAntipasto.addProdotto(insalataDimare);
-        menuAntipasto.addProdotto(cozzeEVongole);
-        menuAntipasto.addProdotto(scampi);
-        menuAntipasto.addProdotto(pesceAlGratin);
-        menuAntipasto.addProdotto(bruschetta);
-        menuAntipasto.addProdotto(fritturaMista);
-        menuAntipasto.addProdotto(salmoneEAliciMarinate);
-        menuAntipasto.addProdotto(tagliereSalumiEFormaggi);
-        menuAntipasto.addProdotto(patatineFritte);
+        menuA.addPortata(a1);
+        menuA.addPortata(a2);
+        menuA.addPortata(a3);
+        menuA.addPortata(a4);
+        menuA.addPortata(a5);
+        menuA.addPortata(a6);
+        menuA.addPortata(a7);
+        menuA.addPortata(a8);
+        menuA.addPortata(a9);
+        menuA.addPortata(a10);
 
-        Menu menuPrimiDiTerra = new Menu("Primi Piatti di terra");
+        MenuAllaCarta menuPT = new MenuAllaCarta("Primi Piatti di Terra:");
 
-        Portata pastaCarbonara = new Portata("Pasta alla Carbonara", "Pasta con uovo,formaggio e guanciale", 10.00, "primo");
-        Portata cacioEPepe = new Portata("Pasta cacio e pepe", "Pasta condita con pepe condita con cacio", 10.00, "primo");
-        Portata tagliatelle = new Portata("Tagliatelle di cinghiale", "Tagliatelle al ragu di cinghiale e formaggio", 12.00, "primo");
-        Portata tagliatelleFunghi = new Portata("Tagliatelle con i porcini", "Tagliatelle con porcini e una grattuggiata di formaggio", 14.00, "primo");
-        Portata gnocchetti = new Portata("GNOCCHETTI ALLA CAMPIDANESE", "Gnocchi con ragù alla salsiccia di maiale e pecorino sardo", 15.00, "primo");
-        Portata tortelli = new Portata("Tortelli di Manzo", "Tortelli allo stracotto di manzo, radice daikon", 16.00, "primo");
+        Primo pt1 = new Primo("Pasta alla Carbonara", "Pasta con uovo,formaggio e guanciale", 10.00);
+        Primo pt2 = new Primo("Pasta cacio e pepe", "Pasta condita con pepe condita con cacio", 10.00);
+        Primo pt3 = new Primo("Tagliatelle di cinghiale", "Tagliatelle al ragu di cinghiale e formaggio", 12.00);
+        Primo pt4 = new Primo("Tagliatelle con i porcini", "Tagliatelle con porcini e una grattuggiata di formaggio", 14.00);
+        Primo pt5 = new Primo("GNOCCHETTI ALLA CAMPIDANESE", "Gnocchi con ragù alla salsiccia di maiale e pecorino sardo", 15.00);
+        Primo pt6 = new Primo("Tortelli di Manzo", "Tortelli allo stracotto di manzo, radice daikon", 16.00);
 
-        menuPrimiDiTerra.addProdotto(cacioEPepe);
-        menuPrimiDiTerra.addProdotto(tagliatelleFunghi);
-        menuPrimiDiTerra.addProdotto(tagliatelle);
-        menuPrimiDiTerra.addProdotto(gnocchetti);
-        menuPrimiDiTerra.addProdotto(tortelli);
-        menuPrimiDiTerra.addProdotto(pastaCarbonara);
+        menuPT.addPortata(pt1);
+        menuPT.addPortata(pt2);
+        menuPT.addPortata(pt3);
+        menuPT.addPortata(pt4);
+        menuPT.addPortata(pt5);
+        menuPT.addPortata(pt6);
 
-        Menu menuPrimiDiMare = new Menu("Primi piatti di mare");
+        MenuAllaCarta menuPM = new MenuAllaCarta("Primi Piatti di Mare:");
 
-        Portata spaghettiCartoccio = new Portata("Spaghettti al cartoccio", "Spaghetti al cartoccio ai frutti di mare", 14.00, "primo");
-        Portata ravioli = new Portata("Ravioli", "Ravioli di branzino con bottarga di tonno", 14.00, "primo");
-        Portata cavatelli = new Portata("Cavatelli", "Cavatelli al ragu di gambero e pistacchio", 14.00, "primo");
-        Portata linguineScoglio = new Portata("Linguine allo scoglio", "Linguine con cozze, vongole, cannolicchi, gamberi e calamari", 16.00, "primo");
-        Portata linguineVongoleELimone = new Portata("Linguine vongole E Limone", "Linguine con vongole con grattata di scorza di limone", 12.00, "primo");
-        Portata mezziPaccheri = new Portata("Mezzi paccheri con Gambero rosso", "Mezzi paccheri con gambero rosso e crema di zucchine.", 20.00, "primo");
+        Primo pm1 = new Primo("Spaghettti al cartoccio", "Spaghetti al cartoccio ai frutti di mare", 14.00);
+        Primo pm2 = new Primo("Ravioli", "Ravioli di branzino con bottarga di tonno", 14.00);
+        Primo pm3 = new Primo("Cavatelli", "Cavatelli al ragu di gambero e pistacchio", 14.00);
+        Primo pm4 = new Primo("Linguine allo scoglio", "Linguine con cozze, vongole, cannolicchi, gamberi e calamari", 16.00);
+        Primo pm5 = new Primo("Linguine vongole E Limone", "Linguine con vongole con grattata di scorza di limone", 12.00);
+        Primo pm6 = new Primo("Mezzi paccheri con Gambero rosso", "Mezzi paccheri con gambero rosso e crema di zucchine.", 20.00);
 
-        menuPrimiDiMare.addProdotto(spaghettiCartoccio);
-        menuPrimiDiMare.addProdotto(ravioli);
-        menuPrimiDiMare.addProdotto(cavatelli);
-        menuPrimiDiMare.addProdotto(linguineScoglio);
-        menuPrimiDiMare.addProdotto(linguineVongoleELimone);
-        menuPrimiDiMare.addProdotto(mezziPaccheri);
+        menuPM.addPortata(pm1);
+        menuPM.addPortata(pm2);
+        menuPM.addPortata(pm3);
+        menuPM.addPortata(pm4);
+        menuPM.addPortata(pm5);
+        menuPM.addPortata(pm6);
 
-        Menu secondiDiMare = new Menu("Secondi piatti di mare");
+        MenuAllaCarta menuSM = new MenuAllaCarta("Secondi Piatti di Mare:");
+        
+        Secondo sm1 = new Secondo("Fritto Misto", "La nostra frittura di calamari, gamberi e paranza con maionese", 20.00);
+        Secondo sm2 = new Secondo("Ombrina", "Ombrina alla piastra, crema di fave, bietola scottata, millefoglie di patate", 25.00);
+        Secondo sm3 = new Secondo("Tonno", "Tonno scottato, caponata, patate dauphine", 22.00);
+        Secondo sm4 = new Secondo("Grigliata di pesce", "Pescato del giorno grigliato con gamberoni, tranci di calamaro e gamberonni", 17.00);
+        Secondo sm5 = new Secondo("Polpo alla brace", "Tenero polpo cotto alla brace", 15.00);
 
-        Portata frittoMisto = new Portata("Fritto Misto", "La nostra frittura di calamari, gamberi e paranza con maionese", 20.00, "secondo");
-        Portata ombrina = new Portata("Ombrina", "Ombrina alla piastra, crema di fave, bietola scottata, millefoglie di patate", 25.00, "secondo");
-        Portata tonno = new Portata("Tonno", "Tonno scottato, caponata, patate dauphine", 22.00, "secondo");
-        Portata grigliataDiPesce = new Portata("Grigliata di pesce", "Pescato del giorno grigliato con gamberoni, tranci di calamaro e gamberonni", 17.00, "secondo");
-        Portata polpo = new Portata("Polpo alla brace", "Tenero polpo cotto alla brace", 15.00, "secondo");
+        menuSM.addPortata(sm1);
+        menuSM.addPortata(sm2);
+        menuSM.addPortata(sm3);
+        menuSM.addPortata(sm4);
+        menuSM.addPortata(sm5);
 
-        secondiDiMare.addProdotto(frittoMisto);
-        secondiDiMare.addProdotto(ombrina);
-        secondiDiMare.addProdotto(tonno);
-        secondiDiMare.addProdotto(grigliataDiPesce);
-        secondiDiMare.addProdotto(polpo);
+        MenuAllaCarta menuST = new MenuAllaCarta("Secondi Piatti di Terra:");
 
-        Menu secondiTerra = new Menu("Secondi terra");
+        Secondo st1 = new Secondo("Tagliata di Manzo", "Tagliato di manzo con taglio largo ai ferri", 14.00);
+        Secondo st2 = new Secondo("Controfiletto", "Controfiletto di manzo cotto a bassa temperatura, cipollotto scottato, crema di patate al tartufo, fondo bruno", 22.00);
+        Secondo st3 = new Secondo("Tomahawk", "Tomahawk bistecca servita con verdure grigliate", 65.00);
+        Secondo st4 = new Secondo("Pancetta Tesa", "Pancia di maiale sardo cotto a bassa temperatura, crema di finocchi, belga scottata", 17.00);
+        Secondo st5 = new Secondo("Grigliata Mista", "Grigliata mista di maiale, pollo e manzo", 17.00);
 
-        Portata tagliataDiManzo = new Portata("Tagliata di Manzo", "Tagliato di manzo con taglio largo ai ferri", 14.00, "secondo");
-        Portata controfiletto = new Portata("Controfiletto", "Controfiletto di manzo cotto a bassa temperatura, cipollotto scottato, crema di patate al tartufo, fondo bruno", 22.00, "secondo");
-        Portata tomahawk = new Portata("Tomahawk", "Tomahawk bistecca servita con verdure grigliate", 65.00, "secondo");
-        Portata pancettaTesa = new Portata("Pancetta Tesa", "Pancia di maiale sardo cotto a bassa temperatura, crema di finocchi, belga scottata", 17.00, "secondo");
-        Portata grigliataMistaDiCarne = new Portata("Grigliata Mista", "Grigliata mista di maiale, pollo e manzo", 17.00, "secondo");
+        menuST.addPortata(st1);
+        menuST.addPortata(st2);
+        menuST.addPortata(st3);
+        menuST.addPortata(st4);
+        menuST.addPortata(st5);
 
-        secondiTerra.addProdotto(tagliataDiManzo);
-        secondiTerra.addProdotto(controfiletto);
-        secondiTerra.addProdotto(tomahawk);
-        secondiTerra.addProdotto(pancettaTesa);
-        secondiTerra.addProdotto(grigliataMistaDiCarne);
+        MenuAllaCarta menuD = new MenuAllaCarta("Dessert:");
 
-        Menu dessert = new Menu("Dessert");
+        Dessert d1 = new Dessert("Cassata siciliana", "Leggerissimo dolce siciliano", 4.00);
+        Dessert d2 = new Dessert("Cannolo siciliano", "Dolce con chantillea, pistacchio e granella di pistacchio", 5.00);
+        Dessert d3 = new Dessert("Semifreddo al Torrone", "Morbido torrone con ricattura di cacao", 6.00);
+        Dessert d4 = new Dessert("Tortino al cioccolato", "Tortino al cioccolato con cuore fondente caldo", 9.00);
+        Dessert d5 = new Dessert("Tiramisu", "Tiramisu classico", 9.00);
+        Dessert d6 = new Dessert("Millefoglie", "Millefoglie, crema pasticcera, frutta fresca", 9.00);
+        Dessert d7 = new Dessert("Seada Sarda", "Seada tradizionale sarda, miele, croccante alle mandorle", 9.00);
 
-        Portata cassata = new Portata("Cassata siciliana", "Leggerissimo dolce siciliano", 4.00, "dessert");
-        Portata cannolo = new Portata("Cannolo siciliano", "Dolce con chantillea, pistacchio e granella di pistacchio", 5.00, "dessert");
-        Portata semifreddoTorrone = new Portata("Semifreddo al Torrone", "Morbido torrone con ricattura di cacao", 6.00, "dessert");
-        Portata tortino = new Portata("Tortino al cioccolato", "Tortino al cioccolato con cuore fondente caldo", 9.00, "dessert");
-        Portata tiramisu = new Portata("Tiramisu", "Tiramisu classico", 9.00, "dessert");
-        Portata milleFoglie = new Portata("Millefoglie", "Millefoglie, crema pasticcera, frutta fresca", 9.00, "dessert");
-        Portata seadaSarda = new Portata("Seada Sarda", "Seada tradizionale sarda, miele, croccante alle mandorle", 9.00, "dessert");
+        menuD.addPortata(d1);
+        menuD.addPortata(d2);
+        menuD.addPortata(d3);
+        menuD.addPortata(d4);
+        menuD.addPortata(d5);
+        menuD.addPortata(d6);
+        menuD.addPortata(d7);
 
-        dessert.addProdotto(cassata);
-        dessert.addProdotto(cannolo);
-        dessert.addProdotto(semifreddoTorrone);
-        dessert.addProdotto(tortino);
-        dessert.addProdotto(tiramisu);
-        dessert.addProdotto(milleFoglie);
-        dessert.addProdotto(seadaSarda);
+        MenuAllaCarta menuBB = new MenuAllaCarta("Birre Artigianali:");
 
-        Menu listaBirreArtigianali = new Menu("Birre Artigianali");
+        Bevanda b1 = new Bevanda("Sardinian Pale Ale", "Pale Ale 0,50cl", 12.00);
+        Bevanda b2 = new Bevanda("Sardinian Ipa", "IPA 0,50cl", 12.00);
+        Bevanda b3 = new Bevanda("Sexy Pompia", "Fruit Beer 0,50cl", 12.00);
+        Bevanda b4 = new Bevanda("Frieska", "Bière Blanche 0,75cl", 22.00);
+        Bevanda b5 = new Bevanda("BB Verblonde", "Italian Grape Ale (IGA), alla sapa da uve Vermentino 0,75cl", 22.00);
 
-        Bevanda sardinian = new Bevanda("Sardinian Pale Ale", "Pale Ale 0,50cl", 12.00, "bevanda");
-        Bevanda sardinianIpa = new Bevanda("Sardinian Ipa", "IPA 0,50cl", 12.00, "bevanda");
-        Bevanda sexyPompia = new Bevanda("Sexy Pompia", "Fruit Beer 0,50cl", 12.00, "bevanda");
-        Bevanda frieska = new Bevanda("Frieska", "Bière Blanche 0,75cl", 22.00, "bevanda");
-        Bevanda verblonde = new Bevanda("BB Verblonde", "Italian Grape Ale (IGA), alla sapa da uve Vermentino 0,75cl", 22.00, "bevanda");
+        menuBB.addPortata(b1);
+        menuBB.addPortata(b2);
+        menuBB.addPortata(b3);
+        menuBB.addPortata(b4);
+        menuBB.addPortata(b5);
 
-        listaBirreArtigianali.addProdotto(sardinian);
-        listaBirreArtigianali.addProdotto(sardinianIpa);
-        listaBirreArtigianali.addProdotto(sexyPompia);
-        listaBirreArtigianali.addProdotto(frieska);
-        listaBirreArtigianali.addProdotto(verblonde);
+        MenuAllaCarta menuBVB = new MenuAllaCarta("Vini Bianchi Nazionali:");
 
-        Menu viniBianchi = new Menu("Vini Bianchi Nazionali");
+        Bevanda bvb1 = new Bevanda("Fiano d'Avellino- G.Marsella", "Fiano di Avellino", 40.00);
+        Bevanda bvb2 = new Bevanda("Carbonare Inama", "Soave", 40.00);
+        Bevanda bvb3 = new Bevanda("Vulcaia Naia", "Sauvignon Veneto", 34.00);
+        Bevanda bvb4 = new Bevanda("Frus bianco", "Friuli", 35.00);
+        Bevanda bvb5 = new Bevanda("Carricante Calabretta", "Sicilia", 30.00);
+        Bevanda bvb6 = new Bevanda("Sauvignon Oberkerschbaum J. Hoffstatter", "Sauvignon - Trentino Alto Adige", 45.00);
+        Bevanda bvb7 = new Bevanda("Vogelmaier Moscato giallo A. Lageder", "Moscato giallo - Magré Trentino Alto Adige", 30.00);
+        Bevanda bvb8 = new Bevanda("Am Sand Gewurztraminer A. Lagerer", "Magré Trentino Alto Adige", 40.00);
+        Bevanda bvb9 = new Bevanda("Derthona Vigneti Massa", "Timorasso - Monleale Piemonte", 40.00);
 
-        Bevanda fianoDiAvellino = new Bevanda("Fiano d'Avellino- G.Marsella", "Fiano di Avellino", 40.00, "bevanda");
-        Bevanda carbonareInama = new Bevanda("Carbonare Inama", "Soave", 40.00, "bevanda");
-        Bevanda vulcaiaNaia = new Bevanda("Vulcaia Naia", "Sauvignon Veneto", 34.00, "bevanda");
-        Bevanda frusBianco = new Bevanda("Frus bianco", "Friuli", 35.00, "bevanda");
-        Bevanda carricanteCalabretta = new Bevanda("Carricante Calabretta", "Sicilia", 30.00, "bevanda");
-        Bevanda sauvignonOberkerschbaum = new Bevanda("Sauvignon Oberkerschbaum J. Hoffstatter", "Sauvignon - Trentino Alto Adige", 45.00, "bevanda");
-        Bevanda vogelmaierMoscato = new Bevanda("Vogelmaier Moscato giallo A. Lageder", "Moscato giallo - Magré Trentino Alto Adige", 30.00, "bevanda");
-        Bevanda gewurztraminer = new Bevanda("Am Sand Gewurztraminer A. Lagerer", "Magré Trentino Alto Adige", 40.00, "bevanda");
-        Bevanda derthonaVignetiMassa = new Bevanda("Derthona Vigneti Massa", "Timorasso - Monleale Piemonte", 40.00, "bevanda");
+        menuBVB.addPortata(bvb1);
+        menuBVB.addPortata(bvb2);
+        menuBVB.addPortata(bvb3);
+        menuBVB.addPortata(bvb4);
+        menuBVB.addPortata(bvb5);
+        menuBVB.addPortata(bvb6);
+        menuBVB.addPortata(bvb7);
+        menuBVB.addPortata(bvb8);
+        menuBVB.addPortata(bvb9);
 
-        viniBianchi.addProdotto(fianoDiAvellino);
-        viniBianchi.addProdotto(carbonareInama);
-        viniBianchi.addProdotto(vulcaiaNaia);
-        viniBianchi.addProdotto(frusBianco);
-        viniBianchi.addProdotto(carricanteCalabretta);
-        viniBianchi.addProdotto(sauvignonOberkerschbaum);
-        viniBianchi.addProdotto(vogelmaierMoscato);
-        viniBianchi.addProdotto(gewurztraminer);
-        viniBianchi.addProdotto(derthonaVignetiMassa);
+        MenuAllaCarta menuBVR = new MenuAllaCarta("Vini Rossi Nazionali:");
 
-        Menu viniRossi = new Menu("Vini Rossi Nazionali");
+        Bevanda bvr1 = new Bevanda("Barolo Villero 2012 Oddero", "La Morra - Piemonte", 85.00);
+        Bevanda bvr2 = new Bevanda("Barbera d’Alba Eugenio Bocchino", "Piobesi D'Alba", 33.00);
+        Bevanda bvr3 = new Bevanda("Pinot nero Trattman Girlan", "Trentino Alto Adige", 65.00);
+        Bevanda bvr4 = new Bevanda("Terra di Lavoro 2013/2014 Galardi", "Aglianico, Piedirosso - Sessa Aurunca Campania", 65.00);
+        Bevanda bvr5 = new Bevanda("Guido Alberto Tenute San Guido", "Cabernet Sauvignon, Merlot - Bolgheri - Toscana", 75.00);
+        Bevanda bvr6 = new Bevanda("Le Volte dell’Ornellaia", "Merlot, Sangiovese, Cabernet Sauvignon - Bolgheri - Toscana", 45.00);
+        Bevanda bvr7 = new Bevanda("Le Serre Nuove dell’Ornellaia 2016", "Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot Bolgheri - Toscana", 75.00);
+        Bevanda bvr8 = new Bevanda("Ornellaia 2014", "Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot Bolgheri - Toscana", 280.00);
+        Bevanda bvr9 = new Bevanda("Solaia Antinori 1999/2008", "Cabernet Sauvignon, Sangiovese, Cabernet Franc San Casciano - Toscana", 350.00);
 
-        Bevanda barolo = new Bevanda("Barolo Villero 2012 Oddero", "La Morra - Piemonte", 85.00, "bevanda");
-        Bevanda barberaDAlba = new Bevanda("Barbera d’Alba Eugenio Bocchino", "Piobesi D'Alba", 33.00, "bevanda");
-        Bevanda pinotNeroTrattman = new Bevanda("Pinot nero Trattman Girlan", "Trentino Alto Adige", 65.00, "bevanda");
-        Bevanda galardi = new Bevanda("Terra di Lavoro 2013/2014 Galardi", "Aglianico, Piedirosso - Sessa Aurunca Campania", 65.00, "bevanda");
-        Bevanda guidoAlbertoSanGuido = new Bevanda("Guido Alberto Tenute San Guido", "Cabernet Sauvignon, Merlot - Bolgheri - Toscana", 75.00, "bevanda");
-        Bevanda volteOrnellaia = new Bevanda("Le Volte dell’Ornellaia", "Merlot, Sangiovese, Cabernet Sauvignon - Bolgheri - Toscana", 45.00, "bevanda");
-        Bevanda serreNuoveOrnellaia = new Bevanda("Le Serre Nuove dell’Ornellaia 2016", "Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot Bolgheri - Toscana", 75.00, "bevanda");
-        Bevanda ornellaia = new Bevanda("Ornellaia 2014", "Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot Bolgheri - Toscana", 280.00, "bevanda");
-        Bevanda solaiaAntinori = new Bevanda("Solaia Antinori 1999/2008", "Cabernet Sauvignon, Sangiovese, Cabernet Franc San Casciano - Toscana", 350.00, "bevanda");
+        menuBVR.addPortata(bvr1);
+        menuBVR.addPortata(bvr2);
+        menuBVR.addPortata(bvr3);
+        menuBVR.addPortata(bvr4);
+        menuBVR.addPortata(bvr5);
+        menuBVR.addPortata(bvr6);
+        menuBVR.addPortata(bvr7);
+        menuBVR.addPortata(bvr8);
+        menuBVR.addPortata(bvr9);
 
-        viniRossi.addProdotto(barolo);
-        viniRossi.addProdotto(barberaDAlba);
-        viniRossi.addProdotto(pinotNeroTrattman);
-        viniRossi.addProdotto(galardi);
-        viniRossi.addProdotto(guidoAlbertoSanGuido);
-        viniRossi.addProdotto(volteOrnellaia);
-        viniRossi.addProdotto(serreNuoveOrnellaia);
-        viniRossi.addProdotto(ornellaia);
-        viniRossi.addProdotto(solaiaAntinori);
+        r1.addMenu(menuA);
+        r1.addMenu(menuPT);
+        r1.addMenu(menuPM);
+        r1.addMenu(menuSM);
+        r1.addMenu(menuST);
+        r1.addMenu(menuD);
+        r1.addMenu(menuBB);
+        r1.addMenu(menuBVB);
+        r1.addMenu(menuBVR);
 
-        daLillo.addMenu(menuAntipasto);
-        daLillo.addMenu(menuPrimiDiTerra);
-        daLillo.addMenu(menuPrimiDiMare);
-        daLillo.addMenu(secondiDiMare);
-        daLillo.addMenu(secondiTerra);
-        daLillo.addMenu(dessert);
-        daLillo.addMenu(listaBirreArtigianali);
-        daLillo.addMenu(viniBianchi);
-        daLillo.addMenu(viniRossi);
-
-        daLillo.printAllMenu();
-
-        daLillo.printPlateByType("secondo");
-
-
+        r1.printAllMenu();
+        menuA.printMenuSpecifico();
     }
 }
