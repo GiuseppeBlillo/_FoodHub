@@ -1,0 +1,24 @@
+package ProdottiInVendita;
+
+import Enumerations.TipoDiPiattoEnum;
+
+import java.util.List;
+
+public class Antipasto extends Portata implements Printable{
+    public Antipasto(String name, String description, double price, TipoDiPiattoEnum tipoDiPiatto) {
+        super(name, description, price,tipoDiPiatto);
+    }
+
+
+    @Override
+    public void printPortatePerTipo() {
+        //qui dovremmo poterci stampare tutti gli antipasti all'interno di un menu
+
+    }
+
+    @Override
+    public void printPortata(Antipasto x) {
+        System.out.println(String.format("%-50s %-80s %9s\n", x.getName().toUpperCase(), " ", String.format("%.2f", x.getPrice()) + " €") + "\033[3m" + x.getDescription() + "\033[0m\n\n");
+    }
+}
+
