@@ -16,7 +16,6 @@ public class MenuAllaCarta {
     public MenuAllaCarta(String name, String chef, TipoDiMenuEnum tipo) {
         this.name = name;
         this.chef = chef;
-        this.prezzoMedio = getPrezzoMedio();
         this.tipo = tipo;
         this.portataList = new ArrayList<>();
     }
@@ -45,15 +44,13 @@ public class MenuAllaCarta {
         this.prezzoMedio = prezzoMedio;
     }*/
 
-    public double prezzoMedio(){
-        double prezzoMedio = 0;
-
-        for (Portata p : portataList){
-            prezzoMedio += p.getPrice();
-        }
-
-        prezzoMedio = prezzoMedio / portataList.size();
-        return prezzoMedio;
+    public double prezzoMedio() {
+        double prezzoMedio = 0.0;
+        for (Portata p : portataList) {
+            if (!(p instanceof Bevanda)) {
+                prezzoMedio += p.getPrice();
+            }
+        }   return prezzoMedio;
     }
 
     public TipoDiMenuEnum getTipo() {
@@ -67,79 +64,118 @@ public class MenuAllaCarta {
     public List<Portata> getPortataList() {
         return portataList;
     }
+
     public void setPortataList(List<Portata> portataList) {
         this.portataList = portataList;
     }
 
     public void addPortata(Portata p) {
-       // if ((!portataList.contains(p))) {
-            portataList.add(p);
+        // if ((!portataList.contains(p))) {
+        portataList.add(p);
         //}
-       // System.out.println("Portata attualmente già presente nel menù");
+        // System.out.println("Portata attualmente già presente nel menù");
     }
+
     public void removePortata(Portata p) {
         portataList.remove(p);
     }
 
-    public void printMenu(){
-
-        System.out.println(String.format("\n \n%-2s %-50s %-50s" , ColoriEnum.GREEN_BOLD.getANSI_Code() ," ", "ANTIPASTI" , " ", "\n"));
-
-
+    private boolean presenzaAntipasto(){
         for (Portata p : portataList){
             if (p instanceof Antipasto){
-                p.printPortata(ColoriEnum.MAIUSC_GREEN, ColoriEnum.GREEN);
-                System.out.println(ColoriEnum.ANSI_RESET.getANSI_Code());
+                return true;
             }
-        }
-
-        System.out.println(String.format("\n \n%-2s %-50s %-50s" ,ColoriEnum.RED_BOLD.getANSI_Code() , "", "PRIMI" , "" ,"\n" ));
-
-
+        }   return false;
+    }
+    private boolean presenzaPrimo(){
         for (Portata p : portataList){
             if (p instanceof Primo){
-                p.printPortata(ColoriEnum.MAIUSC_RED, ColoriEnum.RED);
-                System.out.println(ColoriEnum.ANSI_RESET.getANSI_Code());
+                return true;
             }
-        }
-
-        System.out.println(String.format("\n \n%-2s %-50s %-50s" , ColoriEnum.YELLOW_BOLD.getANSI_Code() , " ", "SECONDI" ,  " ", "\n"));
-
-
+        }   return false;
+    }
+    private boolean presenzaSecondo(){
         for (Portata p : portataList){
             if (p instanceof Secondo){
-                p.printPortata(ColoriEnum.MAIUSC_YELLOW, ColoriEnum.YELLOW);
-                System.out.println(ColoriEnum.ANSI_RESET.getANSI_Code());
+                return true;
             }
-        }
-
-        System.out.println(String.format("\n \n %-2s %-50s %-50s" , ColoriEnum.PURPLE_BOLD.getANSI_Code() , "","DESSERT", "", "\n"));
-
-
+        }   return false;
+    }
+    private boolean presenzaDessert(){
         for (Portata p : portataList){
             if (p instanceof Dessert){
-                p.printPortata(ColoriEnum.MAIUSC_PURPLE, ColoriEnum.PURPLE);
-                System.out.println(ColoriEnum.ANSI_RESET.getANSI_Code());
+                return true;
             }
-        }
-
-        System.out.println(String.format("\n \n %-2s %-50s %-50s" , ColoriEnum.BLUE_BOLD.getANSI_Code(), "", "BEVANDE", "", "\n"));
-
+        }   return false;
+    }
+    private boolean presenzaBevanda(){
         for (Portata p : portataList){
             if (p instanceof Bevanda){
-                p.printPortata(ColoriEnum.MAIUSC_BLUE, ColoriEnum.BLUE);
-                System.out.println(ColoriEnum.ANSI_RESET.getANSI_Code());
+                return true;
+            }
+        }   return false;
+    }
+
+    public void printMenu() {
+
+        if (!portataList.isEmpty() && presenzaAntipasto()) {
+            System.out.println(String.format("\n \n%-2s %-50s %-50s", ColoriEnum.GREEN_BOLD.getANSI_Code(), " ", "ANTIPASTI", " ", "\n"));
+            for (Portata p : portataList) {
+                if (p instanceof Antipasto) {
+                    p.printPortata(ColoriEnum.MAIUSC_GREEN, ColoriEnum.GREEN);
+                    System.out.println(ColoriEnum.ANSI_RESET.getANSI_Code());
+                }
             }
         }
-        System.out.println("\n");
+
+        if (!portataList.isEmpty() && presenzaPrimo()) {
+            System.out.println(String.format("\n \n%-2s %-50s %-50s", ColoriEnum.RED_BOLD.getANSI_Code(), "", "PRIMI", "", "\n"));
+            for (Portata p : portataList) {
+                if (p instanceof Primo) {
+                    p.printPortata(ColoriEnum.MAIUSC_RED, ColoriEnum.RED);
+                    System.out.println(ColoriEnum.ANSI_RESET.getANSI_Code());
+                }
+            }
+        }
+
+        if (!portataList.isEmpty() && presenzaSecondo()) {
+            System.out.println(String.format("\n \n%-2s %-50s %-50s", ColoriEnum.YELLOW_BOLD.getANSI_Code(), " ", "SECONDI", " ", "\n"));
+            for (Portata p : portataList) {
+                if (p instanceof Secondo) {
+                    p.printPortata(ColoriEnum.MAIUSC_YELLOW, ColoriEnum.YELLOW);
+                    System.out.println(ColoriEnum.ANSI_RESET.getANSI_Code());
+                }
+            }
+        }
+
+        if (!portataList.isEmpty() && presenzaDessert()) {
+            System.out.println(String.format("\n \n %-2s %-50s %-50s", ColoriEnum.PURPLE_BOLD.getANSI_Code(), "", "DESSERT", "", "\n"));
+            for (Portata p : portataList) {
+                if (p instanceof Dessert) {
+                    p.printPortata(ColoriEnum.MAIUSC_PURPLE, ColoriEnum.PURPLE);
+                    System.out.println(ColoriEnum.ANSI_RESET.getANSI_Code());
+                }
+            }
+        }
+
+        if (!portataList.isEmpty() && presenzaBevanda()) {
+            System.out.println(String.format("\n \n %-2s %-50s %-50s", ColoriEnum.BLUE_BOLD.getANSI_Code(), "", "BEVANDE", "", "\n"));
+            for (Portata p : portataList) {
+                if (p instanceof Bevanda) {
+                    p.printPortata(ColoriEnum.MAIUSC_BLUE, ColoriEnum.BLUE);
+                    System.out.println(ColoriEnum.ANSI_RESET.getANSI_Code());
+                }
+            }
+        }
     }
 
     public void printPrezzoMedioMenu(){
-        System.out.println("Il prezzo medio del " + getTipo().getDescrizione().toLowerCase() +" è: " +String.format("%.2f", getPrezzoMedio()) + " €");
+
+        System.out.println("Il prezzo medio del " + getTipo().getDescrizione().toLowerCase() +" è: " + String.format("%.2f",prezzoMedio )+ " €");
     }
     public void printMenuSpecifico(){
-    System.out.println("\033[0;1m" + "\u001B[33m" + "\"•._.••´¯``•.¸¸.•`La lista di portate scelte è la seguente`•.¸¸.•´´¯`••._.• ".toUpperCase() + "\u001B[0m");
-    System.out.println("");
+        System.out.println("\033[0;1m" + "\u001B[33m" + "\"•._.••´¯``•.¸¸.•`La lista di portate scelte è la seguente`•.¸¸.•´´¯`••._.• ".toUpperCase() + "\u001B[0m" + "\n");
+        System.out.println("");
       for (Portata p : getPortataList()){
           System.out.println(String.format("%-50s %-80s %9s\n", p.getName().toUpperCase(), " ", String.format("%.2f", p.getPrice()) + " €") + "\033[3m" + p.getDescription() + "\033[0m\n\n");
       }

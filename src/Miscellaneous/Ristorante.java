@@ -1,6 +1,7 @@
 package Miscellaneous;
 import Enumerations.ColoriEnum;
 import Enumerations.TipoDiCucinaEnum;
+import ProdottiInVendita.Bevanda;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,7 +46,7 @@ public class Ristorante {
         for (MenuAllaCarta menu : menuList){
             sommaPrezziMedi += menu.prezzoMedio();
         }
-        return sommaPrezziMedi;
+        return sommaPrezziMedi /menuList.size();
     }
 
     public void printPrezzoMedioRistorante(){
@@ -55,7 +56,7 @@ public class Ristorante {
 
     public void printRistorante() {
         System.out.println(String.format("\n %-5s %-35s %-50s %-50s\n",  ColoriEnum.YELLOW_BOLD.getANSI_Code(), " ", this.name, ""));
-        System.out.println(String.format("\n %-45s %-50s %-50s\n", "", TipoDiCucinaEnum.ITALIANA.getDescrizioneCucina(), " "));
+        System.out.print(String.format("\n %-45s %-50s %-50s\n", "", TipoDiCucinaEnum.ITALIANA.getDescrizioneCucina(), " "));
         System.out.print(ColoriEnum.ANSI_RESET.getANSI_Code());
 
         printPrezzoMedioRistorante();

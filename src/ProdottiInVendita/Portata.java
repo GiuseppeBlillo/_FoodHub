@@ -3,7 +3,6 @@ package ProdottiInVendita;
 import Enumerations.ColoriEnum;
 import Enumerations.TipoDiPiattoEnum;
 
-import java.util.List;
 
 public abstract class Portata {
     protected String name;
