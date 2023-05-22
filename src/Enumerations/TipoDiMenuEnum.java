@@ -1,19 +1,19 @@
 package Enumerations;
 
 public enum TipoDiMenuEnum {
-    CARNE("Carne"),
-    PESCE("Pesce"),
-    ONNIVORO("Onnivoro"),
-    VEGANO("Vegano"),
-    VEGETARIANO("Vegetariano"),
-    GLUTENFREE("Senza Glutine");
-    private String tipologia;
+    CARNE("Menù di Carne"),
+    PESCE("Menù di Pesce"),
+    ONNIVORO("Menù Onnivoro"),
+    VEGANO("Menù Vegano"),
+    VEGETARIANO("Menù Vegetariano"),
+    GLUTENFREE("Menù Gluten-Free");
+    private String descrizione;
 
-    TipoDiMenuEnum(String tipologia) {
-        this.tipologia = tipologia;
+    TipoDiMenuEnum(String descrizione) {
+        this.descrizione = descrizione;
     }
 
-    public String getTipologia() {
-        return tipologia;
+    public String getDescrizione() {
+        return descrizione;
     }
 }

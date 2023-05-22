@@ -14,10 +14,10 @@ public class MenuAllaCarta {
     private TipoDiMenuEnum tipo;
     private List<Portata> portataList;
 
-    public MenuAllaCarta(String name, String chef, double prezzoMedio, TipoDiMenuEnum tipo) {
+    public MenuAllaCarta(String name, String chef, TipoDiMenuEnum tipo) {
         this.name = name;
         this.chef = chef;
-        this.prezzoMedio = prezzoMedio;
+        this.prezzoMedio = getPrezzoMedio();
         this.tipo = tipo;
         this.portataList = new ArrayList<>();
     }
@@ -42,8 +42,19 @@ public class MenuAllaCarta {
         return prezzoMedio;
     }
 
-    public void setPrezzoMedio(double prezzoMedio) {
+   /* public void setPrezzoMedio(double prezzoMedio) {
         this.prezzoMedio = prezzoMedio;
+    }*/
+
+    public double prezzoMedio(){
+        double prezzoMedio = 0;
+
+        for (Portata p : portataList){
+            prezzoMedio += p.getPrice();
+        }
+
+        prezzoMedio = prezzoMedio / portataList.size();
+        return prezzoMedio;
     }
 
     public TipoDiMenuEnum getTipo() {
@@ -56,6 +67,9 @@ public class MenuAllaCarta {
 
     public List<Portata> getPortataList() {
         return portataList;
+    }
+    public void setPortataList(List<Portata> portataList) {
+        this.portataList = portataList;
     }
 
     public void addPortata(Portata p) {
@@ -117,19 +131,9 @@ public class MenuAllaCarta {
         }
         System.out.println("\n");
     }
-    public double PrezzoMedioAAA(){
-        double prezzoMedioUUU = 0;
-
-        for (Portata p : portataList){
-            prezzoMedioUUU += p.getPrice();
-        }
-
-        prezzoMedioUUU = prezzoMedioUUU / portataList.size();
-        return prezzoMedioUUU;
-    }
 
     public void printPrezzoMedioMenu(){
-        System.out.println(String.format("%.2f", PrezzoMedioAAA()));
+        System.out.println("Il prezzo medio del " + getTipo().getDescrizione().toLowerCase() +" è: " +String.format("%.2f", getPrezzoMedio()) + " €");
     }
     public void printMenuSpecifico(){
     System.out.println("\033[0;1m" + "\u001B[33m" + "\"•._.••´¯``•.¸¸.•`La lista di portate scelte è la seguente`•.¸¸.•´´¯`••._.• ".toUpperCase() + "\u001B[0m");

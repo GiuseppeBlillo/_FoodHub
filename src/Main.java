@@ -1,3 +1,4 @@
+import Enumerations.TipoDiCucinaEnum;
 import Enumerations.TipoDiMenuEnum;
 import Enumerations.TipoDiPiattoEnum;
 import Miscelleneous.MenuAllaCarta;
@@ -7,9 +8,9 @@ import ProdottiInVendita.*;
 public class Main {
     public static void main(String[] args) {
 
-        Ristorante r1 = new Ristorante("R I S T O R A N T E    D A    L I L L O", TipoDiMenuEnum.ONNIVORO);
+        Ristorante r1 = new Ristorante("R I S T O R A N T E    D A    L I L L O", TipoDiCucinaEnum.ITALIANA);
 
-        MenuAllaCarta menuCarne = new MenuAllaCarta("Menù di Carne", "Chef Peter Cross", 25, TipoDiMenuEnum.CARNE);
+        MenuAllaCarta menuCarne = new MenuAllaCarta("Menù di Carne", "Chef Peter Cross", TipoDiMenuEnum.CARNE);
 
 
         Antipasto a5 = new Antipasto("Bruschetta", "Tipica bruschetta con aglio tritato fino, origano, olio e pomodorini", 6.00, TipoDiPiattoEnum.ANTIPASTO);
@@ -48,7 +49,7 @@ public class Main {
         menuCarne.addPortata(st4);
         menuCarne.addPortata(st5);
 
-        MenuAllaCarta menuPesce = new MenuAllaCarta("Menù di Pesce", "Chef Joseph Blondelil", 33, TipoDiMenuEnum.PESCE);
+        MenuAllaCarta menuPesce = new MenuAllaCarta("Menù di Pesce", "Chef Joseph Blondelil", TipoDiMenuEnum.PESCE);
 
         Antipasto a1 = new Antipasto("Insalata di Mare", "Insalata di mare con seppie, gamberi e verdure", 12.00, TipoDiPiattoEnum.ANTIPASTO);
         Antipasto a2 = new Antipasto("Cozze E Vongole", "Impepata di cozze e vongole", 10.00, TipoDiPiattoEnum.ANTIPASTO);
@@ -195,10 +196,12 @@ public class Main {
 
         r1.addMenu(menuCarne);
         r1.addMenu(menuPesce);
-        r1.removeMenu(menuPesce);
 
-        r1.printRistorante();
-           // r1.printPrezzoMedioRistorante();
+
+        //r1.printRistorante();
+        //menuCarne.printPrezzoMedioMenu();
+        //menuPesce.printMenu();
+        //r1.printPrezzoMedioRistorante();
 
     }
 }
