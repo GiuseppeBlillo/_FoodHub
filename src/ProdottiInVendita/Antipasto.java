@@ -2,7 +2,6 @@ package ProdottiInVendita;
 
 import Enumerations.TipoDiPiattoEnum;
 
-import java.util.List;
 
 public class Antipasto extends Portata implements Printable{
     public Antipasto(String name, String description, double price, TipoDiPiattoEnum tipoDiPiatto) {
@@ -17,8 +16,8 @@ public class Antipasto extends Portata implements Printable{
     }
 
     @Override
-    public void printPortata(Antipasto x) {
-        System.out.println(String.format("%-50s %-80s %9s\n", x.getName().toUpperCase(), " ", String.format("%.2f", x.getPrice()) + " €") + "\033[3m" + x.getDescription() + "\033[0m\n\n");
+    public void printPortata() {
+        System.out.println(String.format("%-50s %-80s %9s\n", getName().toUpperCase(), " ", String.format("%.2f", getPrice()) + " €") + "\033[3m" + getDescription() + "\033[0m\n\n");
     }
 }
 

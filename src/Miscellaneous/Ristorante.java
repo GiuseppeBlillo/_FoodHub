@@ -1,10 +1,7 @@
-package Miscelleneous;
+package Miscellaneous;
 import Enumerations.ColoriEnum;
 import Enumerations.TipoDiCucinaEnum;
-import Enumerations.TipoDiMenuEnum;
 
-
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,8 +9,6 @@ public class Ristorante {
     private String name;
     private TipoDiCucinaEnum tipoCucina;
     private List<MenuAllaCarta> menuList;
-
-
 
     public Ristorante(String name, TipoDiCucinaEnum tipoCucina) {
         this.name = name;

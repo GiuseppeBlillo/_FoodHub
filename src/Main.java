@@ -1,8 +1,8 @@
 import Enumerations.TipoDiCucinaEnum;
 import Enumerations.TipoDiMenuEnum;
 import Enumerations.TipoDiPiattoEnum;
-import Miscelleneous.MenuAllaCarta;
-import Miscelleneous.Ristorante;
+import Miscellaneous.MenuAllaCarta;
+import Miscellaneous.Ristorante;
 import ProdottiInVendita.*;
 
 public class Main {
@@ -193,15 +193,31 @@ public class Main {
         menuPesce.addPortata(b21);
         menuPesce.addPortata(b22);
         menuPesce.addPortata(b23);
+        menuPesce.removePortata(b23);
 
         r1.addMenu(menuCarne);
-        r1.addMenu(menuPesce);
+       /* r1.addMenu(menuPesce);
+        r1.removeMenu(menuPesce);
+
+        */
 
 
-        //r1.printRistorante();
+        r1.printRistorante();
         //menuCarne.printPrezzoMedioMenu();
         //menuPesce.printMenu();
         //r1.printPrezzoMedioRistorante();
+/*
+        Cliente gino =new Cliente("","",null,0);
+        IndirizzoRecord indirizzoRecord = new IndirizzoRecord("Via Dai Piedi", 10, 1234);
+        gino.setAddress(indirizzoRecord);
+        System.out.println(gino.getAddress());
+
+ */
+
+
+
+
+
 
     }
 }

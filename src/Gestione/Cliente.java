@@ -1,14 +1,12 @@
-package Miscelleneous;
+package Gestione;
 
 public class Cliente {
     private String name;
     private String surname;
-    private String address;
-
-
+    private IndirizzoRecord address;
     private int age;
 
-    public Cliente(String name, String surname, String address, int age) {
+    public Cliente(String name, String surname, IndirizzoRecord address, int age) {
         this.name = name;
         this.surname = surname;
         this.address = address;
@@ -31,11 +29,11 @@ public class Cliente {
         this.surname = surname;
     }
 
-    public String getAddress() {
+    public IndirizzoRecord getAddress() {
         return address;
     }
 
-    public void setAddress(String address) {
+    public void setAddress(IndirizzoRecord address) {
         this.address = address;
     }
 

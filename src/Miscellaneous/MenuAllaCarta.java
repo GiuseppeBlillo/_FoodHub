@@ -1,11 +1,10 @@
-package Miscelleneous;
+package Miscellaneous;
 
 import Enumerations.ColoriEnum;
 import Enumerations.TipoDiMenuEnum;
 import ProdottiInVendita.*;
 import java.util.ArrayList;
 import java.util.List;
-
 
 public class MenuAllaCarta {
     private String name;
@@ -73,7 +72,10 @@ public class MenuAllaCarta {
     }
 
     public void addPortata(Portata p) {
-        portataList.add(p);
+       // if ((!portataList.contains(p))) {
+            portataList.add(p);
+        //}
+       // System.out.println("Portata attualmente già presente nel menù");
     }
     public void removePortata(Portata p) {
         portataList.remove(p);
