@@ -118,11 +118,13 @@ public class MenuAllaCarta {
         this.portataList = portataList;
     }
 
-    public void addPortata(Portata p) {
-        // if ((!portataList.contains(p))) {
+    public void addPortata(Portata p){
+        if(!(portataList.contains(p))){
         portataList.add(p);
-        //}
-        // System.out.println("Portata attualmente già presente nel menù");
+        }else
+        portataList.add(p);
+        portataList.remove(p);
+        System.err.println("la portata '"+p.getName().toLowerCase() + " 'è già presente nel menu");
     }
 
     public void removePortata(Portata p) {

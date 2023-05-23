@@ -8,7 +8,7 @@ import Miscellaneous.Ristorante;
 import ProdottiInVendita.*;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args)throws Exception {
 
         Ristorante r1 = new Ristorante("R I S T O R A N T E    D A    L I L L O", TipoDiCucinaEnum.ITALIANA);
 
@@ -201,10 +201,6 @@ public class Main {
  */
 
         r1.addMenu(menuPesce);
-
-
-
-
 
         r1.addMenu(menuCarne);
 
