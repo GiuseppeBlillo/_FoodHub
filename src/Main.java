@@ -14,7 +14,6 @@ public class Main {
 
         MenuAllaCarta menuCarne = new MenuAllaCarta("Menù di Carne", "Chef Peter Cross", TipoDiMenuEnum.CARNE);
 
-
         Antipasto a5 = new Antipasto("Bruschetta", "Tipica bruschetta con aglio tritato fino, origano, olio e pomodorini", 6.00, TipoDiPiattoEnum.ANTIPASTO);
         Antipasto a8 = new Antipasto("Tagliere Salumi E Formaggi", "Salumi di stagione con tipici formaggi locali", 16.00,TipoDiPiattoEnum.ANTIPASTO), T;
         Antipasto a9 = new Antipasto("Insalata Mista", "Insalata mista di radicchio, rucola e lattuga iceberg", 6.50, TipoDiPiattoEnum.ANTIPASTO);
@@ -24,7 +23,6 @@ public class Main {
         menuCarne.addPortata(a8);
         menuCarne.addPortata(a9);
         menuCarne.addPortata(a10);
-
 
         Primo pt1 = new Primo("Carbonara", "Pasta con uovo, formaggio e guanciale", 10.00, TipoDiPiattoEnum.PRIMO);
         Primo pt2 = new Primo("Cacio e Pepe", "Pasta condita con cacio e pepe", 10.00, TipoDiPiattoEnum.PRIMO);
@@ -117,8 +115,7 @@ public class Main {
         menuPesce.addPortata(d5);
         menuPesce.addPortata(d6);
         menuPesce.addPortata(d7);
-
-
+/*
         Bevanda b1 = new Bevanda("Sardinian Pale Ale", "Pale Ale 0,50cl", 12.00, TipoDiPiattoEnum.BEVANDA);
         Bevanda b2 = new Bevanda("Sardinian Ipa", "IPA 0,50cl", 12.00, TipoDiPiattoEnum.BEVANDA);
         Bevanda b3 = new Bevanda("Sexy Pompia", "Fruit Beer 0,50cl", 12.00, TipoDiPiattoEnum.BEVANDA);
@@ -136,8 +133,6 @@ public class Main {
         menuPesce.addPortata(b3);
         menuPesce.addPortata(b4);
         menuPesce.addPortata(b5);
-
-
 
         Bevanda b6 = new Bevanda("Carbonare Inama", "Soave", 40.00, TipoDiPiattoEnum.BEVANDA);
         Bevanda b7 = new Bevanda("Vulcaia Naia", "Sauvignon Veneto", 34.00, TipoDiPiattoEnum.BEVANDA);
@@ -169,8 +164,6 @@ public class Main {
         menuPesce.addPortata(b13);
         menuPesce.addPortata(b14);
 
-
-
         Bevanda b15 = new Bevanda("Barolo Villero 2012 Oddero", "La Morra - Piemonte", 85.00, TipoDiPiattoEnum.BEVANDA);
         Bevanda b16 = new Bevanda("Barbera d’Alba Eugenio Bocchino", "Piobesi D'Alba", 33.00, TipoDiPiattoEnum.BEVANDA);
         Bevanda b17 = new Bevanda("Pinot nero Trattman Girlan", "Trentino Alto Adige", 65.00, TipoDiPiattoEnum.BEVANDA);
@@ -191,7 +184,6 @@ public class Main {
         menuCarne.addPortata(b22);
         menuCarne.addPortata(b23);
 
-
         menuPesce.addPortata(b15);
         menuPesce.addPortata(b16);
         menuPesce.addPortata(b17);
@@ -203,25 +195,21 @@ public class Main {
         menuPesce.addPortata(b23);
         menuPesce.removePortata(b23);
 
-        r1.addMenu(menuPesce);
+ */
 
-        r1.removeMenu(menuPesce);
+        r1.addMenu(menuPesce);
 
 
 
         r1.addMenu(menuCarne);
 
-
         r1.printRistorante();
-        menuCarne.printPrezzoMedioMenu();
-        //menuPesce.printMenu();
-        r1.printPrezzoMedioRistorante();
+
+
 
         Cliente gino =new Cliente("","",null,0);
         //IndirizzoRecord indirizzoRecord = new IndirizzoRecord("Via Dai Piedi", 10, 1234);
         //gino.setAddress(indirizzoRecord);
         //System.out.println(gino.getAddress());
-
-
     }
 }

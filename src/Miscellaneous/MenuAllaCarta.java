@@ -50,7 +50,7 @@ public class MenuAllaCarta {
             if (!(p instanceof Bevanda)) {
                 prezzoMedio += p.getPrice();
             }
-        }   return prezzoMedio;
+        }   return prezzoMedio/this.portataList.size();
     }
 
     public TipoDiMenuEnum getTipo() {
@@ -87,6 +87,7 @@ public class MenuAllaCarta {
             }
         }   return false;
     }
+
     private boolean presenzaPrimo(){
         for (Portata p : portataList){
             if (p instanceof Primo){
@@ -94,6 +95,7 @@ public class MenuAllaCarta {
             }
         }   return false;
     }
+
     private boolean presenzaSecondo(){
         for (Portata p : portataList){
             if (p instanceof Secondo){
@@ -108,6 +110,7 @@ public class MenuAllaCarta {
             }
         }   return false;
     }
+
     private boolean presenzaBevanda(){
         for (Portata p : portataList){
             if (p instanceof Bevanda){
@@ -170,15 +173,14 @@ public class MenuAllaCarta {
     }
 
     public void printPrezzoMedioMenu(){
-
-        System.out.println("Il prezzo medio del " + getTipo().getDescrizione().toLowerCase() +" è: " + String.format("%.2f",prezzoMedio )+ " €");
+        System.out.println("Il prezzo medio del " + getTipo().getDescrizione().toLowerCase() +" è: " + String.format("%.2f", prezzoMedio() )+ " €");
     }
+
     public void printMenuSpecifico(){
         System.out.println("\033[0;1m" + "\u001B[33m" + "\"•._.••´¯``•.¸¸.•`La lista di portate scelte è la seguente`•.¸¸.•´´¯`••._.• ".toUpperCase() + "\u001B[0m" + "\n");
         System.out.println("");
-      for (Portata p : getPortataList()){
-          System.out.println(String.format("%-50s %-80s %9s\n", p.getName().toUpperCase(), " ", String.format("%.2f", p.getPrice()) + " €") + "\033[3m" + p.getDescription() + "\033[0m\n\n");
-      }
-}
-
+        for (Portata p : getPortataList()){
+            System.out.println(String.format("%-50s %-80s %9s\n", p.getName().toUpperCase(), " ", String.format("%.2f", p.getPrice()) + " €") + "\033[3m" + p.getDescription() + "\033[0m\n\n");
+        }
+    }
 }

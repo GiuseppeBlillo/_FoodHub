@@ -2,9 +2,13 @@ package Miscellaneous;
 import Enumerations.ColoriEnum;
 import Enumerations.TipoDiCucinaEnum;
 import ProdottiInVendita.Bevanda;
+import ProdottiInVendita.Portata;
 
+import javax.sound.sampled.Port;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Ristorante {
     private String name;
@@ -41,17 +45,33 @@ public class Ristorante {
         this.menuList.remove(x);
     }
 
-    public double PrezzoMedioRistorante(){
+    public Map<MenuAllaCarta, Double> PrezzoMedioRistorante(){
+        Map<MenuAllaCarta,Double> medieDeiMenu = new HashMap<>();
+
+        for (MenuAllaCarta menu : menuList) {
         double sommaPrezziMedi = 0.0;
-        for (MenuAllaCarta menu : menuList){
-            sommaPrezziMedi += menu.prezzoMedio();
+                //sommaPrezziMedi += menu.prezzoMedio();
+            for (Portata p : menu.getPortataList()){
+                sommaPrezziMedi+=p.getPrice();
+            }
+            double mediaMenu = sommaPrezziMedi/menu.getPortataList().size();
+            medieDeiMenu.put(menu,mediaMenu);
         }
-        return sommaPrezziMedi /menuList.size();
+            return medieDeiMenu;
     }
 
     public void printPrezzoMedioRistorante(){
-        System.out.print(String.format("\n %-40s %-40s %-6s \n", ColoriEnum.CYAN.getANSI_Code(), "Il prezzo medio a persona (bevande escluse) è:" ,
-                String.format("%.2f",PrezzoMedioRistorante())+" €"));
+       // System.out.print(String.format("\n %-40s %-40s %-6s \n", ColoriEnum.CYAN.getANSI_Code(), "Il prezzo medio a persona (bevande escluse) è:" ,
+            //    String.format("%.2f",PrezzoMedioRistorante())+" €"));
+        Map<MenuAllaCarta,Double>medieDeiMenu=PrezzoMedioRistorante();
+        for (Map.Entry<MenuAllaCarta,Double> entry : medieDeiMenu.entrySet()){
+            MenuAllaCarta menu = entry.getKey();
+            double mediaMenu = entry.getValue();
+
+            System.out.print(String.format("\n %-40s %-40s %-6s %-2s ", ColoriEnum.CYAN.getANSI_Code(), "Il prezzo medio a persona (bevande escluse) è:" ,
+                        menu.getName(),String.format("%.2f", mediaMenu))+"€");
+
+        }
     }
 
     public void printRistorante() {
@@ -59,7 +79,6 @@ public class Ristorante {
         System.out.print(String.format("\n %-45s %-50s %-50s\n", "", TipoDiCucinaEnum.ITALIANA.getDescrizioneCucina(), " "));
         System.out.print(ColoriEnum.ANSI_RESET.getANSI_Code());
 
-        printPrezzoMedioRistorante();
 
         for (MenuAllaCarta menuu : menuList) {
                 System.out.print(String.format(" \n\n%-5s %-48s %-50s %-50s\n", ColoriEnum.PURPLE_BOLD.getANSI_Code() ," ", menuu.getName().toUpperCase(), " "));
@@ -67,5 +86,6 @@ public class Ristorante {
 
             menuu.printMenu();
             }
+            printPrezzoMedioRistorante();
         }
     }
