@@ -44,13 +44,62 @@ public class MenuAllaCarta {
         this.prezzoMedio = prezzoMedio;
     }*/
 
-    public double prezzoMedio() {
-        double prezzoMedio = 0.0;
-        for (Portata p : portataList) {
-            if (!(p instanceof Bevanda)) {
-                prezzoMedio += p.getPrice();
+    public double prezzoMedioListePortate() {
+
+        double mediaTotale = 0.0;
+
+        if (!portataList.isEmpty() && presenzaAntipasto()) {
+            double mediaParziale = 0.0;
+            int contaPortata = 0;
+            for (Portata p : portataList) {
+                if (p instanceof Antipasto) {
+                    mediaParziale += p.getPrice();
+                    contaPortata++;
+                }
             }
-        }   return prezzoMedio/this.portataList.size();
+            mediaParziale /= contaPortata;
+            mediaTotale += mediaParziale;
+        }
+
+        if (!portataList.isEmpty() && presenzaPrimo()) {
+            double mediaParziale = 0.0;
+            int contaPortata = 0;
+            for (Portata p : portataList) {
+                if (p instanceof Primo) {
+                    mediaParziale += p.getPrice();
+                    contaPortata++;
+                }
+            }
+            mediaParziale /= contaPortata;
+            mediaTotale += mediaParziale;
+        }
+
+        if (!portataList.isEmpty() && presenzaSecondo()) {
+            double mediaParziale = 0.0;
+            int contaPortata = 0;
+            for (Portata p : portataList) {
+                if (p instanceof Secondo) {
+                    mediaParziale += p.getPrice();
+                    contaPortata++;
+                }
+            }
+            mediaParziale /= contaPortata;
+            mediaTotale += mediaParziale;
+        }
+
+        if (!portataList.isEmpty() && presenzaDessert()) {
+            double mediaParziale = 0.0;
+            int contaPortata = 0;
+            for (Portata p : portataList) {
+                if (p instanceof Dessert) {
+                    mediaParziale += p.getPrice();
+                    contaPortata++;
+                }
+            }
+            mediaParziale /= contaPortata;
+            mediaTotale += mediaParziale;
+        }
+        return  Math.ceil(mediaTotale);
     }
 
     public TipoDiMenuEnum getTipo() {
@@ -103,6 +152,7 @@ public class MenuAllaCarta {
             }
         }   return false;
     }
+
     private boolean presenzaDessert(){
         for (Portata p : portataList){
             if (p instanceof Dessert){
@@ -172,8 +222,8 @@ public class MenuAllaCarta {
         }
     }
 
-    public void printPrezzoMedioMenu(){
-        System.out.println("Il prezzo medio del " + getTipo().getDescrizione().toLowerCase() +" è: " + String.format("%.2f", prezzoMedio() )+ " €");
+    public void printPrezzoMedioListePortate(){
+        System.out.println("Il prezzo medio del " + getTipo().getDescrizione().toLowerCase() +" è: " + String.format("%.2f", prezzoMedioListePortate() )+ " €");
     }
 
     public void printMenuSpecifico(){

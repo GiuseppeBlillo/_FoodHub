@@ -13,9 +13,8 @@ public class Main {
         Ristorante r1 = new Ristorante("R I S T O R A N T E    D A    L I L L O", TipoDiCucinaEnum.ITALIANA);
 
         MenuAllaCarta menuCarne = new MenuAllaCarta("Menù di Carne", "Chef Peter Cross", TipoDiMenuEnum.CARNE);
-
         Antipasto a5 = new Antipasto("Bruschetta", "Tipica bruschetta con aglio tritato fino, origano, olio e pomodorini", 6.00, TipoDiPiattoEnum.ANTIPASTO);
-        Antipasto a8 = new Antipasto("Tagliere Salumi E Formaggi", "Salumi di stagione con tipici formaggi locali", 16.00,TipoDiPiattoEnum.ANTIPASTO), T;
+        Antipasto a8 = new Antipasto("Tagliere Salumi E Formaggi", "Salumi di stagione con tipici formaggi locali", 16.00,TipoDiPiattoEnum.ANTIPASTO);
         Antipasto a9 = new Antipasto("Insalata Mista", "Insalata mista di radicchio, rucola e lattuga iceberg", 6.50, TipoDiPiattoEnum.ANTIPASTO);
         Antipasto a10 = new Antipasto("Patatine Fritte", "Frittura di patate con buccia", 6.00, TipoDiPiattoEnum.ANTIPASTO);
 
@@ -37,6 +36,8 @@ public class Main {
         menuCarne.addPortata(pt4);
         menuCarne.addPortata(pt5);
         menuCarne.addPortata(pt6);
+
+
 
         Secondo st1 = new Secondo("Tagliata di Manzo", "Tagliato di manzo con taglio largo ai ferri", 14.00, TipoDiPiattoEnum.SECONDO);
         Secondo st2 = new Secondo("Controfiletto", "Controfiletto di manzo cotto a bassa temperatura, crema di patate al tartufo e fondo bruno",22.00, TipoDiPiattoEnum.SECONDO);
@@ -65,6 +66,7 @@ public class Main {
         menuPesce.addPortata(a4);
         menuPesce.addPortata(a6);
         menuPesce.addPortata(a7);
+/*
 
         Primo pm1 = new Primo("Spaghettti al cartoccio", "Spaghetti al cartoccio ai frutti di mare", 14.00, TipoDiPiattoEnum.PRIMO);
         Primo pm2 = new Primo("Ravioli", "Ravioli di branzino con bottarga di tonno", 14.00, TipoDiPiattoEnum.PRIMO);
@@ -115,7 +117,7 @@ public class Main {
         menuPesce.addPortata(d5);
         menuPesce.addPortata(d6);
         menuPesce.addPortata(d7);
-/*
+*/
         Bevanda b1 = new Bevanda("Sardinian Pale Ale", "Pale Ale 0,50cl", 12.00, TipoDiPiattoEnum.BEVANDA);
         Bevanda b2 = new Bevanda("Sardinian Ipa", "IPA 0,50cl", 12.00, TipoDiPiattoEnum.BEVANDA);
         Bevanda b3 = new Bevanda("Sexy Pompia", "Fruit Beer 0,50cl", 12.00, TipoDiPiattoEnum.BEVANDA);
@@ -127,7 +129,7 @@ public class Main {
         menuCarne.addPortata(b3);
         menuCarne.addPortata(b4);
         menuCarne.addPortata(b5);
-
+/*
         menuPesce.addPortata(b1);
         menuPesce.addPortata(b2);
         menuPesce.addPortata(b3);
@@ -182,6 +184,7 @@ public class Main {
         menuCarne.addPortata(b20);
         menuCarne.addPortata(b21);
         menuCarne.addPortata(b22);
+
         menuCarne.addPortata(b23);
 
         menuPesce.addPortata(b15);
@@ -201,10 +204,18 @@ public class Main {
 
 
 
+
+
         r1.addMenu(menuCarne);
 
-        r1.printRistorante();
+        r1.printRistoranteTotale();
 
+        r1.setCoperto(2);
+
+        menuCarne.printPrezzoMedioListePortate();
+
+
+        r1.printRistoranteTotale();
 
 
         Cliente gino =new Cliente("","",null,0);
