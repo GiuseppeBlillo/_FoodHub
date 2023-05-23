@@ -1,18 +1,15 @@
-import Enumerations.TipoDiCucinaEnum;
 import Enumerations.TipoDiMenuEnum;
 import Enumerations.TipoDiPiattoEnum;
-import Gestione.Cliente;
-import Gestione.IndirizzoRecord;
-import Miscellaneous.MenuAllaCarta;
+import Miscellaneous.Menu;
 import Miscellaneous.Ristorante;
 import ProdottiInVendita.*;
 
 public class Main {
-    public static void main(String[] args)throws Exception {
+    public static void main(String[] args){
 
-        Ristorante r1 = new Ristorante("R I S T O R A N T E    D A    L I L L O", TipoDiCucinaEnum.ITALIANA);
+        Ristorante r1 = new Ristorante("R I S T O R A N T E    D A    L I L L O");
 
-        MenuAllaCarta menuCarne = new MenuAllaCarta("Menù di Carne", "Chef Peter Cross", TipoDiMenuEnum.CARNE);
+        Menu menuCarne = new Menu("Menù di Carne", "Chef Peter Cross", TipoDiMenuEnum.CARNE);
         Antipasto a5 = new Antipasto("Bruschetta", "Tipica bruschetta con aglio tritato fino, origano, olio e pomodorini", 6.00, TipoDiPiattoEnum.ANTIPASTO);
         Antipasto a8 = new Antipasto("Tagliere Salumi E Formaggi", "Salumi di stagione con tipici formaggi locali", 16.00,TipoDiPiattoEnum.ANTIPASTO);
         Antipasto a9 = new Antipasto("Insalata Mista", "Insalata mista di radicchio, rucola e lattuga iceberg", 6.50, TipoDiPiattoEnum.ANTIPASTO);
@@ -51,7 +48,7 @@ public class Main {
         menuCarne.addPortata(st4);
         menuCarne.addPortata(st5);
 
-        MenuAllaCarta menuPesce = new MenuAllaCarta("Menù di Pesce", "Chef Joseph Blondelil", TipoDiMenuEnum.PESCE);
+        Menu menuPesce = new Menu("Menù di Pesce", "Chef Joseph Blondelil", TipoDiMenuEnum.PESCE);
 
         Antipasto a1 = new Antipasto("Insalata di Mare", "Insalata di mare con seppie, gamberi e verdure", 12.00, TipoDiPiattoEnum.ANTIPASTO);
         Antipasto a2 = new Antipasto("Cozze E Vongole", "Impepata di cozze e vongole", 10.00, TipoDiPiattoEnum.ANTIPASTO);
@@ -66,7 +63,7 @@ public class Main {
         menuPesce.addPortata(a4);
         menuPesce.addPortata(a6);
         menuPesce.addPortata(a7);
-/*
+
 
         Primo pm1 = new Primo("Spaghettti al cartoccio", "Spaghetti al cartoccio ai frutti di mare", 14.00, TipoDiPiattoEnum.PRIMO);
         Primo pm2 = new Primo("Ravioli", "Ravioli di branzino con bottarga di tonno", 14.00, TipoDiPiattoEnum.PRIMO);
@@ -117,7 +114,7 @@ public class Main {
         menuPesce.addPortata(d5);
         menuPesce.addPortata(d6);
         menuPesce.addPortata(d7);
-*/
+
         Bevanda b1 = new Bevanda("Sardinian Pale Ale", "Pale Ale 0,50cl", 12.00, TipoDiPiattoEnum.BEVANDA);
         Bevanda b2 = new Bevanda("Sardinian Ipa", "IPA 0,50cl", 12.00, TipoDiPiattoEnum.BEVANDA);
         Bevanda b3 = new Bevanda("Sexy Pompia", "Fruit Beer 0,50cl", 12.00, TipoDiPiattoEnum.BEVANDA);
@@ -129,7 +126,7 @@ public class Main {
         menuCarne.addPortata(b3);
         menuCarne.addPortata(b4);
         menuCarne.addPortata(b5);
-/*
+
         menuPesce.addPortata(b1);
         menuPesce.addPortata(b2);
         menuPesce.addPortata(b3);
@@ -184,7 +181,6 @@ public class Main {
         menuCarne.addPortata(b20);
         menuCarne.addPortata(b21);
         menuCarne.addPortata(b22);
-
         menuCarne.addPortata(b23);
 
         menuPesce.addPortata(b15);
@@ -196,27 +192,12 @@ public class Main {
         menuPesce.addPortata(b21);
         menuPesce.addPortata(b22);
         menuPesce.addPortata(b23);
-        menuPesce.removePortata(b23);
-
- */
 
         r1.addMenu(menuPesce);
-
         r1.addMenu(menuCarne);
 
-        r1.printRistoranteTotale();
-
         r1.setCoperto(2);
-
-        menuCarne.printPrezzoMedioListePortate();
-
-
         r1.printRistoranteTotale();
 
-
-        Cliente gino =new Cliente("","",null,0);
-        //IndirizzoRecord indirizzoRecord = new IndirizzoRecord("Via Dai Piedi", 10, 1234);
-        //gino.setAddress(indirizzoRecord);
-        //System.out.println(gino.getAddress());
     }
 }

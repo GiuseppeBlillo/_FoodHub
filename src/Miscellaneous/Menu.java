@@ -6,14 +6,14 @@ import ProdottiInVendita.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MenuAllaCarta {
+public class Menu {
     private String name;
     public String chef;
     private double prezzoMedio;
     private TipoDiMenuEnum tipo;
     private List<Portata> portataList;
 
-    public MenuAllaCarta(String name, String chef, TipoDiMenuEnum tipo) {
+    public Menu(String name, String chef, TipoDiMenuEnum tipo) {
         this.name = name;
         this.chef = chef;
         this.tipo = tipo;
@@ -114,17 +114,16 @@ public class MenuAllaCarta {
         return portataList;
     }
 
-    public void setPortataList(List<Portata> portataList) {
-        this.portataList = portataList;
-    }
 
-    public void addPortata(Portata p){
-        if(!(portataList.contains(p))){
-        portataList.add(p);
-        }else
-        portataList.add(p);
-        portataList.remove(p);
-        System.err.println("la portata '"+p.getName().toLowerCase() + " 'è già presente nel menu");
+
+    public void addPortata(Portata p) {
+        if (!( portataList.contains(p) )) {
+            portataList.add(p);
+        } else {
+            portataList.add(p);
+            portataList.remove(p);
+            System.err.println("la portata '" + p.getName().toLowerCase() + " 'è già presente nel menu");
+        }
     }
 
     public void removePortata(Portata p) {
@@ -228,7 +227,7 @@ public class MenuAllaCarta {
         System.out.println("Il prezzo medio del " + getTipo().getDescrizione().toLowerCase() +" è: " + String.format("%.2f", prezzoMedioListePortate() )+ " €");
     }
 
-    public void printMenuSpecifico(){
+    public void printListePortateSpecifiche(){
         System.out.println("\033[0;1m" + "\u001B[33m" + "\"•._.••´¯``•.¸¸.•`La lista di portate scelte è la seguente`•.¸¸.•´´¯`••._.• ".toUpperCase() + "\u001B[0m" + "\n");
         System.out.println("");
         for (Portata p : getPortataList()){

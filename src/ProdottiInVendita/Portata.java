@@ -55,4 +55,5 @@ public abstract class Portata {
         System.out.print("\n" + (String.format("%-1s %-50s %-60s %9s\n", colorePortata.getANSI_Code(), getName().toUpperCase(), "",  String.format("%.2f", getPrice()) + " €")));
         System.out.print(String.format("%-5s", coloreDescrizione.getANSI_Code() + getDescription()));
     }
+
 }
