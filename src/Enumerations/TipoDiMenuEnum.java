@@ -6,7 +6,9 @@ public enum TipoDiMenuEnum {
     ONNIVORO("Menù Onnivoro"),
     VEGANO("Menù Vegano"),
     VEGETARIANO("Menù Vegetariano"),
-    GLUTENFREE("Menù Gluten-Free");
+    GLUTENFREE("Menù Gluten-Free"),
+    VINO("Carta dei Vini"),
+    BEVANDA("Menù delle Bevande");
     private String descrizione;
 
     TipoDiMenuEnum(String descrizione) {

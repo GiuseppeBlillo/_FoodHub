@@ -76,7 +76,8 @@ public class Ristorante {
             Menu menu = entry.getKey();
             double mediaMenu = entry.getValue();
 
-            System.out.print(String.format("\n %-40s %-35s %-1s  ", ColoriEnum.CYAN.getANSI_Code(), "Il prezzo medio a persona del " +menu.getName().toLowerCase() +" (bevande escluse, coperto incluso) è:", String.format("%.2f", mediaMenu+getCoperto()))+"€");
+            System.out.print(String.format("\n %-40s %-35s %-1s  ", ColoriEnum.CYAN.getANSI_Code(), "Il prezzo medio a persona del " +menu.getName().toLowerCase() +
+                    " (bevande escluse, coperto incluso) è:", String.format("%.2f", mediaMenu+getCoperto()))+"€" + ColoriEnum.ANSI_RESET.getANSI_Code());
 
         }
     }

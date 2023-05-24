@@ -6,10 +6,9 @@ public class Cliente {
     private IndirizzoRecord address;
     private int age;
 
-    public Cliente(String name, String surname, IndirizzoRecord address, int age) {
+    public Cliente(String name, String surname, int age) {
         this.name = name;
         this.surname = surname;
-        this.address = address;
         this.age = age;
     }
 

@@ -13,9 +13,8 @@ public class Menu {
     private TipoDiMenuEnum tipo;
     private List<Portata> portataList;
 
-    public Menu(String name, String chef, TipoDiMenuEnum tipo) {
+    public Menu(String name, TipoDiMenuEnum tipo) {
         this.name = name;
-        this.chef = chef;
         this.tipo = tipo;
         this.portataList = new ArrayList<>();
     }
@@ -115,14 +114,13 @@ public class Menu {
     }
 
 
-
     public void addPortata(Portata p) {
         if (!( portataList.contains(p) )) {
             portataList.add(p);
         } else {
             portataList.add(p);
             portataList.remove(p);
-            System.err.println("la portata '" + p.getName().toLowerCase() + " 'è già presente nel menu");
+            System.err.println("La portata '" + p.getName().toLowerCase() + " 'è già presente nel menu");
         }
     }
 
@@ -176,7 +174,7 @@ public class Menu {
             System.out.println(String.format("\n \n%-2s %-50s %-50s", ColoriEnum.GREEN_BOLD.getANSI_Code(), " ", "ANTIPASTI", " ", "\n"));
             for (Portata p : portataList) {
                 if (p instanceof Antipasto) {
-                    p.printPortata(ColoriEnum.MAIUSC_GREEN, ColoriEnum.GREEN);
+                    p.printPortataColori(ColoriEnum.MAIUSC_GREEN, ColoriEnum.GREEN);
                     System.out.println(ColoriEnum.ANSI_RESET.getANSI_Code());
                 }
             }
@@ -186,7 +184,7 @@ public class Menu {
             System.out.println(String.format("\n \n%-2s %-50s %-50s", ColoriEnum.RED_BOLD.getANSI_Code(), "", "PRIMI", "", "\n"));
             for (Portata p : portataList) {
                 if (p instanceof Primo) {
-                    p.printPortata(ColoriEnum.MAIUSC_RED, ColoriEnum.RED);
+                    p.printPortataColori(ColoriEnum.MAIUSC_RED, ColoriEnum.RED);
                     System.out.println(ColoriEnum.ANSI_RESET.getANSI_Code());
                 }
             }
@@ -196,7 +194,7 @@ public class Menu {
             System.out.println(String.format("\n \n%-2s %-50s %-50s", ColoriEnum.YELLOW_BOLD.getANSI_Code(), " ", "SECONDI", " ", "\n"));
             for (Portata p : portataList) {
                 if (p instanceof Secondo) {
-                    p.printPortata(ColoriEnum.MAIUSC_YELLOW, ColoriEnum.YELLOW);
+                    p.printPortataColori(ColoriEnum.MAIUSC_YELLOW, ColoriEnum.YELLOW);
                     System.out.println(ColoriEnum.ANSI_RESET.getANSI_Code());
                 }
             }
@@ -206,7 +204,7 @@ public class Menu {
             System.out.println(String.format("\n \n %-2s %-50s %-50s", ColoriEnum.PURPLE_BOLD.getANSI_Code(), "", "DESSERT", "", "\n"));
             for (Portata p : portataList) {
                 if (p instanceof Dessert) {
-                    p.printPortata(ColoriEnum.MAIUSC_PURPLE, ColoriEnum.PURPLE);
+                    p.printPortataColori(ColoriEnum.MAIUSC_PURPLE, ColoriEnum.PURPLE);
                     System.out.println(ColoriEnum.ANSI_RESET.getANSI_Code());
                 }
             }
@@ -216,7 +214,7 @@ public class Menu {
             System.out.println(String.format("\n \n %-2s %-50s %-50s", ColoriEnum.BLUE_BOLD.getANSI_Code(), "", "BEVANDE", "", "\n"));
             for (Portata p : portataList) {
                 if (p instanceof Bevanda) {
-                    p.printPortata(ColoriEnum.MAIUSC_BLUE, ColoriEnum.BLUE);
+                    p.printPortataColori(ColoriEnum.MAIUSC_BLUE, ColoriEnum.BLUE);
                     System.out.println(ColoriEnum.ANSI_RESET.getANSI_Code());
                 }
             }

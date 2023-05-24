@@ -1,5 +1,8 @@
+import Enumerations.ColoriEnum;
 import Enumerations.TipoDiMenuEnum;
 import Enumerations.TipoDiPiattoEnum;
+import Gestione.Cliente;
+import Gestione.IndirizzoRecord;
 import Miscellaneous.Menu;
 import Miscellaneous.Ristorante;
 import ProdottiInVendita.*;
@@ -9,7 +12,7 @@ public class Main {
 
         Ristorante r1 = new Ristorante("R I S T O R A N T E    D A    L I L L O");
 
-        Menu menuCarne = new Menu("Menù di Carne", "Chef Peter Cross", TipoDiMenuEnum.CARNE);
+        Menu menuCarne = new Menu("Menù di Carne", TipoDiMenuEnum.CARNE);
         Antipasto a5 = new Antipasto("Bruschetta", "Tipica bruschetta con aglio tritato fino, origano, olio e pomodorini", 6.00, TipoDiPiattoEnum.ANTIPASTO);
         Antipasto a8 = new Antipasto("Tagliere Salumi E Formaggi", "Salumi di stagione con tipici formaggi locali", 16.00,TipoDiPiattoEnum.ANTIPASTO);
         Antipasto a9 = new Antipasto("Insalata Mista", "Insalata mista di radicchio, rucola e lattuga iceberg", 6.50, TipoDiPiattoEnum.ANTIPASTO);
@@ -48,7 +51,7 @@ public class Main {
         menuCarne.addPortata(st4);
         menuCarne.addPortata(st5);
 
-        Menu menuPesce = new Menu("Menù di Pesce", "Chef Joseph Blondelil", TipoDiMenuEnum.PESCE);
+        Menu menuPesce = new Menu("Menù di Pesce", TipoDiMenuEnum.PESCE);
 
         Antipasto a1 = new Antipasto("Insalata di Mare", "Insalata di mare con seppie, gamberi e verdure", 12.00, TipoDiPiattoEnum.ANTIPASTO);
         Antipasto a2 = new Antipasto("Cozze E Vongole", "Impepata di cozze e vongole", 10.00, TipoDiPiattoEnum.ANTIPASTO);
@@ -196,8 +199,16 @@ public class Main {
         r1.addMenu(menuPesce);
         r1.addMenu(menuCarne);
 
-        r1.setCoperto(2);
         r1.printRistoranteTotale();
+
+        b3.printPortata();
+
+
+        //menuPesce.printPrezzoMedioListePortate();;
+       // b3.printPortata(ColoriEnum.BLACK, ColoriEnum.BLUE);
+       // r1.setCoperto(2);
+      // r1.printRistoranteTotale();
+
 
     }
 }
