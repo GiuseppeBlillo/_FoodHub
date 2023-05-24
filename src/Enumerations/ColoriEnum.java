@@ -2,6 +2,7 @@ package Enumerations;
 
 public enum ColoriEnum {
 
+    //TODO inserire la descrizione del colore
     ANSI_RESET ("\u001B[0m"),
 
     BLACK_BACKGROUND  ("\u001B[40m"),

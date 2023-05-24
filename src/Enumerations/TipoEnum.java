@@ -1,17 +1,20 @@
 package Enumerations;
 
-public enum TipoDiMenuEnum {
+
+/**
+ * Enumerato che definisce i tipi
+ */
+public enum TipoEnum {
     CARNE("Menù di Carne"),
     PESCE("Menù di Pesce"),
     ONNIVORO("Menù Onnivoro"),
     VEGANO("Menù Vegano"),
-    VEGETARIANO("Menù Vegetariano"),
-    GLUTENFREE("Menù Gluten-Free"),
-    VINO("Carta dei Vini"),
-    BEVANDA("Menù delle Bevande");
+    VEGETARIANO("Menù Vegetariano");
+
     private String descrizione;
 
-    TipoDiMenuEnum(String descrizione) {
+
+    TipoEnum(String descrizione) {
         this.descrizione = descrizione;
     }
 

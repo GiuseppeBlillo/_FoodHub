@@ -71,7 +71,7 @@ public class Ristorante {
     }
 
     public void printPrezzoMedioRistorante(){
-        Map<Menu,Double>medieDeiMenu=PrezzoMedioMenuRistorante();
+        Map<Menu,Double>medieDeiMenu= PrezzoMedioMenuRistorante();
         for (Map.Entry<Menu,Double> entry : medieDeiMenu.entrySet()){
             Menu menu = entry.getKey();
             double mediaMenu = entry.getValue();

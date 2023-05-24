@@ -6,6 +6,12 @@ public class Cliente {
     private IndirizzoRecord address;
     private int age;
 
+    /**
+     *
+     * @param name
+     * @param surname
+     * @param age
+     */
     public Cliente(String name, String surname, int age) {
         this.name = name;
         this.surname = surname;

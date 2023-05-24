@@ -1,7 +1,7 @@
 package Miscellaneous;
 
 import Enumerations.ColoriEnum;
-import Enumerations.TipoDiMenuEnum;
+import Enumerations.TipoEnum;
 import ProdottiInVendita.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,10 +10,10 @@ public class Menu {
     private String name;
     public String chef;
     private double prezzoMedio;
-    private TipoDiMenuEnum tipo;
+    private TipoEnum tipo;
     private List<Portata> portataList;
 
-    public Menu(String name, TipoDiMenuEnum tipo) {
+    public Menu(String name, TipoEnum tipo) {
         this.name = name;
         this.tipo = tipo;
         this.portataList = new ArrayList<>();
@@ -98,14 +98,17 @@ public class Menu {
             mediaParziale /= contaPortata;
             mediaTotale += mediaParziale;
         }
-        return  Math.ceil(mediaTotale);
+
+        //TODO guardare
+        double ceil = Math.ceil(mediaTotale);
+        return  ceil;
     }
 
-    public TipoDiMenuEnum getTipo() {
+    public TipoEnum getTipo() {
         return tipo;
     }
 
-    public void setTipo(TipoDiMenuEnum tipo) {
+    public void setTipo(TipoEnum tipo) {
         this.tipo = tipo;
     }
 
@@ -115,7 +118,7 @@ public class Menu {
 
 
     public void addPortata(Portata p) {
-        if (!( portataList.contains(p) )) {
+        if (!portataList.contains(p)) {
             portataList.add(p);
         } else {
             portataList.add(p);
@@ -160,15 +163,27 @@ public class Menu {
         }   return false;
     }
 
-    private boolean presenzaBevanda(){
-        for (Portata p : portataList){
-            if (p instanceof Bevanda){
-                return true;
-            }
-        }   return false;
+    //TODO
+    public void printMenu() {
+        System.out.println(TextStyleEnum.ANSI_RED_BACKGROUND.getValue() +
+                TextStyleEnum.EMOJY_FIRE.getValue() + TextStyleEnum.ANSI_BOLD.getValue() + TextStyleEnum.ANSI_BLACK.getValue() + getRestaurantName() +
+                TextStyleEnum.EMOJY_FIRE.getValue() + TextStyleEnum.ANSI_RESET.getValue() + "\n");
+        System.out.println("Chef: " + getChefName() + "\n");
+        System.out.println(getDescription() + "\n");
+        System.out.println("\n PRIMI \n");
+        listaPortata.stream().filter(primo -> primo.getTipoPortata() == TipoPortataEnum.PRIMO).forEach(primo -> primo.printInfo());
+        System.out.println("\n SECONDI \n");
+        listaPortata.stream().filter(secondo -> secondo.getTipoPortata() == TipoPortataEnum.SECONDO).forEach(secondo -> secondo.printInfo());
+        System.out.println("\n DESSERT \n");
+        listaPortata.stream().filter(dessert -> dessert.getTipoPortata() == TipoPortataEnum.DESSERT).forEach(dessert -> dessert.printInfo());
+        System.out.println("\n BEVANDE \n");
+        listaPortata.stream().filter(bevanda -> bevanda.getTipoPortata() == TipoPortataEnum.BEVANDA).forEach(bevanda -> bevanda.printInfo());
+        System.out.println("\n BUON APPETITO!!!");
     }
 
+
     public void printMenu() {
+
 
         if (!portataList.isEmpty() && presenzaAntipasto()) {
             System.out.println(String.format("\n \n%-2s %-50s %-50s", ColoriEnum.GREEN_BOLD.getANSI_Code(), " ", "ANTIPASTI", " ", "\n"));
