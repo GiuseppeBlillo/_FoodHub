@@ -70,14 +70,13 @@ public class Ristorante {
         return medieDeiMenu;
     }
 
-    public void printPrezzoMedioRistorante(){
+    public void printPrezzoMediodeiMenuRistorante(){
         Map<Menu,Double>medieDeiMenu= PrezzoMedioMenuRistorante();
         for (Map.Entry<Menu,Double> entry : medieDeiMenu.entrySet()){
             Menu menu = entry.getKey();
             double mediaMenu = entry.getValue();
 
-            System.out.print(String.format("\n %-40s %-35s %-1s  ", ColoriEnum.CYAN.getANSI_Code(), "Il prezzo medio a persona del " +menu.getName().toLowerCase() +
-                    " (bevande escluse, coperto incluso) è:", String.format("%.2f", mediaMenu+getCoperto()))+"€" + ColoriEnum.ANSI_RESET.getANSI_Code());
+            System.out.print("Il prezzo medio a persona del " + menu.getName().toLowerCase() + " (bevande escluse, coperto incluso) è:" + String.format("%.2f", mediaMenu+getCoperto())+"€" + "\n");
 
         }
     }
@@ -87,14 +86,12 @@ public class Ristorante {
         System.out.print(String.format("\n %-45s %-50s %-50s\n", "", TipoDiCucinaEnum.ITALIANA.getDescrizioneCucina(), " "));
         System.out.print(ColoriEnum.ANSI_RESET.getANSI_Code());
 
-
         for (Menu menuu : menuList) {
             System.out.print(String.format(" \n\n%-5s %-48s %-50s %-50s\n", ColoriEnum.PURPLE_BOLD.getANSI_Code() ," ", menuu.getName().toUpperCase(), " "));
+            menuu.printPrezzoMedioListePortate();
             System.out.print(ColoriEnum.ANSI_RESET.getANSI_Code());
-
             menuu.printMenu();
         }
-        printPrezzoMedioRistorante();
     }
     //Se vogliamo sapere il coperto usiamo questa funzione
     public void printCoperto(){

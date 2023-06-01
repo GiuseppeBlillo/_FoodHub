@@ -1,6 +1,5 @@
 package ProdottiInVendita;
 
-import Enumerations.ColoriEnum;
 import Enumerations.TipoDiPiattoEnum;
 
 
@@ -51,13 +50,9 @@ public abstract class Portata {
         this.tipo = tipo;
     }
 
-    public void printPortata(){
-        System.out.print("\n \n" + (String.format("%-50s %-60s %9s\n", getName().toUpperCase(), "",  String.format("%.2f", getPrice()) + " €")));
-        System.out.print("\033[3m" + getDescription()+ "\033[0m");
-    }
-    public void printPortataColori(ColoriEnum coloreDescrizione, ColoriEnum colorePortata) {
-        System.out.print("\n" + (String.format("%-1s %-50s %-60s %9s\n", colorePortata.getANSI_Code(), getName().toUpperCase(), "",  String.format("%.2f", getPrice()) + " €")));
-        System.out.print(String.format("%-5s", coloreDescrizione.getANSI_Code() + getDescription()));
+    public void printPortataFormattata(){
+        System.out.println("\n");
+        System.out.printf("%-50s %60s %n" + this.description, this.name.toUpperCase(), String.format("%.2f", this.price) + " €" );
     }
 
 }

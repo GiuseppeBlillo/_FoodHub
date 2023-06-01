@@ -65,7 +65,7 @@ public class Main {
         menuPesce.addPortata(a7);
 
 
-        Primo pm1 = new Primo("Spaghettti al cartoccio", "Spaghetti al cartoccio ai frutti di mare", 14.00, TipoDiPiattoEnum.PRIMO);
+        Primo pm1 = new Primo("Spaghetti al cartoccio", "Spaghetti al cartoccio ai frutti di mare", 14.00, TipoDiPiattoEnum.PRIMO);
         Primo pm2 = new Primo("Ravioli", "Ravioli di branzino con bottarga di tonno", 14.00, TipoDiPiattoEnum.PRIMO);
         Primo pm3 = new Primo("Cavatelli", "Cavatelli al ragu di gambero e pistacchio", 14.00, TipoDiPiattoEnum.PRIMO);
         Primo pm4 = new Primo("Linguine allo scoglio", "Linguine con cozze, vongole, cannolicchi, gamberi e calamari", 16.00, TipoDiPiattoEnum.PRIMO);
@@ -195,12 +195,22 @@ public class Main {
 
         r1.addMenu(menuPesce);
         r1.addMenu(menuCarne);
+/*
 
-        r1.printRistoranteTotale();
 
         b3.printPortata();
 
+        pm1.printNomeconSpazioFormattato();
+        menuCarne.addPortata(b18);
+        menuCarne.removePortata(b18);
+        menuCarne.removePortata(b18);
+        menuCarne.printMenu();
+        System.out.println(menuCarne.prezzoMedioListePortate());
+        menuCarne.printPrezzoMedioListePortate();
 
+ */
+
+        r1.printRistoranteTotale();
         //menuPesce.printPrezzoMedioListePortate();;
        // b3.printPortata(ColoriEnum.BLACK, ColoriEnum.BLUE);
        // r1.setCoperto(2);

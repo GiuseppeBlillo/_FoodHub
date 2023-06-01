@@ -1,6 +1,7 @@
 package Miscellaneous;
 
 import Enumerations.ColoriEnum;
+import Enumerations.TipoDiPiattoEnum;
 import Enumerations.TipoEnum;
 import ProdottiInVendita.*;
 import java.util.ArrayList;
@@ -36,18 +37,14 @@ public class Menu {
     }
 
     public double getPrezzoMedio() {
-        return prezzoMedio;
+        return prezzoMedioListePortate();
     }
-
-   /* public void setPrezzoMedio(double prezzoMedio) {
-        this.prezzoMedio = prezzoMedio;
-    }*/
 
     public double prezzoMedioListePortate() {
 
         double mediaTotale = 0.0;
 
-        if (!portataList.isEmpty() && presenzaAntipasto()) {
+        if (!portataList.isEmpty()) {
             double mediaParziale = 0.0;
             int contaPortata = 0;
             for (Portata p : portataList) {
@@ -55,41 +52,18 @@ public class Menu {
                     mediaParziale += p.getPrice();
                     contaPortata++;
                 }
-            }
-            mediaParziale /= contaPortata;
-            mediaTotale += mediaParziale;
-        }
 
-        if (!portataList.isEmpty() && presenzaPrimo()) {
-            double mediaParziale = 0.0;
-            int contaPortata = 0;
-            for (Portata p : portataList) {
+
                 if (p instanceof Primo) {
                     mediaParziale += p.getPrice();
                     contaPortata++;
                 }
-            }
-            mediaParziale /= contaPortata;
-            mediaTotale += mediaParziale;
-        }
 
-        if (!portataList.isEmpty() && presenzaSecondo()) {
-            double mediaParziale = 0.0;
-            int contaPortata = 0;
-            for (Portata p : portataList) {
                 if (p instanceof Secondo) {
                     mediaParziale += p.getPrice();
                     contaPortata++;
                 }
-            }
-            mediaParziale /= contaPortata;
-            mediaTotale += mediaParziale;
-        }
 
-        if (!portataList.isEmpty() && presenzaDessert()) {
-            double mediaParziale = 0.0;
-            int contaPortata = 0;
-            for (Portata p : portataList) {
                 if (p instanceof Dessert) {
                     mediaParziale += p.getPrice();
                     contaPortata++;
@@ -99,9 +73,7 @@ public class Menu {
             mediaTotale += mediaParziale;
         }
 
-        //TODO guardare
-        double ceil = Math.ceil(mediaTotale);
-        return  ceil;
+        return mediaTotale;
     }
 
     public TipoEnum getTipo() {
@@ -116,123 +88,39 @@ public class Menu {
         return portataList;
     }
 
-
     public void addPortata(Portata p) {
         if (!portataList.contains(p)) {
             portataList.add(p);
         } else {
-            portataList.add(p);
-            portataList.remove(p);
-            System.err.println("La portata '" + p.getName().toLowerCase() + " 'è già presente nel menu");
+            System.out.println("La portata '" + p.getName().toLowerCase() + " 'è già presente nel menù");
         }
     }
 
     public void removePortata(Portata p) {
-        portataList.remove(p);
+        if (portataList.contains(p)) {
+            portataList.remove(p);
+        } else {
+            System.out.println("La portata '" + p.getName().toLowerCase() + " ' non è presente nel menù");
+        }
     }
-
-    private boolean presenzaAntipasto(){
-        for (Portata p : portataList){
-            if (p instanceof Antipasto){
-                return true;
-            }
-        }   return false;
-    }
-
-    private boolean presenzaPrimo(){
-        for (Portata p : portataList){
-            if (p instanceof Primo){
-                return true;
-            }
-        }   return false;
-    }
-
-    private boolean presenzaSecondo(){
-        for (Portata p : portataList){
-            if (p instanceof Secondo){
-                return true;
-            }
-        }   return false;
-    }
-
-    private boolean presenzaDessert(){
-        for (Portata p : portataList){
-            if (p instanceof Dessert){
-                return true;
-            }
-        }   return false;
-    }
-
-    //TODO
-    public void printMenu() {
-        System.out.println(TextStyleEnum.ANSI_RED_BACKGROUND.getValue() +
-                TextStyleEnum.EMOJY_FIRE.getValue() + TextStyleEnum.ANSI_BOLD.getValue() + TextStyleEnum.ANSI_BLACK.getValue() + getRestaurantName() +
-                TextStyleEnum.EMOJY_FIRE.getValue() + TextStyleEnum.ANSI_RESET.getValue() + "\n");
-        System.out.println("Chef: " + getChefName() + "\n");
-        System.out.println(getDescription() + "\n");
-        System.out.println("\n PRIMI \n");
-        listaPortata.stream().filter(primo -> primo.getTipoPortata() == TipoPortataEnum.PRIMO).forEach(primo -> primo.printInfo());
-        System.out.println("\n SECONDI \n");
-        listaPortata.stream().filter(secondo -> secondo.getTipoPortata() == TipoPortataEnum.SECONDO).forEach(secondo -> secondo.printInfo());
-        System.out.println("\n DESSERT \n");
-        listaPortata.stream().filter(dessert -> dessert.getTipoPortata() == TipoPortataEnum.DESSERT).forEach(dessert -> dessert.printInfo());
-        System.out.println("\n BEVANDE \n");
-        listaPortata.stream().filter(bevanda -> bevanda.getTipoPortata() == TipoPortataEnum.BEVANDA).forEach(bevanda -> bevanda.printInfo());
-        System.out.println("\n BUON APPETITO!!!");
-    }
-
 
     public void printMenu() {
-
-
-        if (!portataList.isEmpty() && presenzaAntipasto()) {
-            System.out.println(String.format("\n \n%-2s %-50s %-50s", ColoriEnum.GREEN_BOLD.getANSI_Code(), " ", "ANTIPASTI", " ", "\n"));
-            for (Portata p : portataList) {
-                if (p instanceof Antipasto) {
-                    p.printPortataColori(ColoriEnum.MAIUSC_GREEN, ColoriEnum.GREEN);
-                    System.out.println(ColoriEnum.ANSI_RESET.getANSI_Code());
-                }
-            }
-        }
-
-        if (!portataList.isEmpty() && presenzaPrimo()) {
-            System.out.println(String.format("\n \n%-2s %-50s %-50s", ColoriEnum.RED_BOLD.getANSI_Code(), "", "PRIMI", "", "\n"));
-            for (Portata p : portataList) {
-                if (p instanceof Primo) {
-                    p.printPortataColori(ColoriEnum.MAIUSC_RED, ColoriEnum.RED);
-                    System.out.println(ColoriEnum.ANSI_RESET.getANSI_Code());
-                }
-            }
-        }
-
-        if (!portataList.isEmpty() && presenzaSecondo()) {
-            System.out.println(String.format("\n \n%-2s %-50s %-50s", ColoriEnum.YELLOW_BOLD.getANSI_Code(), " ", "SECONDI", " ", "\n"));
-            for (Portata p : portataList) {
-                if (p instanceof Secondo) {
-                    p.printPortataColori(ColoriEnum.MAIUSC_YELLOW, ColoriEnum.YELLOW);
-                    System.out.println(ColoriEnum.ANSI_RESET.getANSI_Code());
-                }
-            }
-        }
-
-        if (!portataList.isEmpty() && presenzaDessert()) {
-            System.out.println(String.format("\n \n %-2s %-50s %-50s", ColoriEnum.PURPLE_BOLD.getANSI_Code(), "", "DESSERT", "", "\n"));
-            for (Portata p : portataList) {
-                if (p instanceof Dessert) {
-                    p.printPortataColori(ColoriEnum.MAIUSC_PURPLE, ColoriEnum.PURPLE);
-                    System.out.println(ColoriEnum.ANSI_RESET.getANSI_Code());
-                }
-            }
-        }
-
-        if (!portataList.isEmpty() && presenzaBevanda()) {
-            System.out.println(String.format("\n \n %-2s %-50s %-50s", ColoriEnum.BLUE_BOLD.getANSI_Code(), "", "BEVANDE", "", "\n"));
-            for (Portata p : portataList) {
-                if (p instanceof Bevanda) {
-                    p.printPortataColori(ColoriEnum.MAIUSC_BLUE, ColoriEnum.BLUE);
-                    System.out.println(ColoriEnum.ANSI_RESET.getANSI_Code());
-                }
-            }
+        if (!portataList.isEmpty()) {
+            System.out.printf("\n%-2s %-50s %-50s", ColoriEnum.GREEN_BOLD.getANSI_Code(), " ", "ANTIPASTI", " " );
+            portataList.stream().filter(antipasto -> antipasto.getTipo() == TipoDiPiattoEnum.ANTIPASTO).forEach(antipasto -> antipasto.printPortataFormattata());
+            System.out.println(ColoriEnum.ANSI_RESET.getANSI_Code() + "\n");
+            System.out.printf("\n%-2s %-50s %-50s", ColoriEnum.RED_BOLD.getANSI_Code(), " ", "PRIMI", " ");
+            portataList.stream().filter(primo -> primo.getTipo() == TipoDiPiattoEnum.PRIMO).forEach(primo -> primo.printPortataFormattata());
+            System.out.println(ColoriEnum.ANSI_RESET.getANSI_Code() + "\n");
+            System.out.printf("\n%-2s %-50s %-50s", ColoriEnum.YELLOW_BOLD.getANSI_Code(), " ", "SECONDI", " ");
+            portataList.stream().filter(secondo -> secondo.getTipo() == TipoDiPiattoEnum.SECONDO).forEach(secondo -> secondo.printPortataFormattata());
+            System.out.println(ColoriEnum.ANSI_RESET.getANSI_Code() + "\n");
+            System.out.printf("\n%-2s %-50s %-50s", ColoriEnum.PURPLE_BOLD.getANSI_Code(), " ", "DESSERT", " ");
+            portataList.stream().filter(dessert -> dessert.getTipo() == TipoDiPiattoEnum.DESSERT).forEach(dessert -> dessert.printPortataFormattata());
+            System.out.println(ColoriEnum.ANSI_RESET.getANSI_Code() + "\n");
+            System.out.printf("\n%-2s %-50s %-50s", ColoriEnum.CYAN_BOLD.getANSI_Code(), " ", "BEVANDE", " ");
+            portataList.stream().filter(bevande -> bevande.getTipo() == TipoDiPiattoEnum.BEVANDA).forEach(bevande -> bevande.printPortataFormattata());
+            System.out.println(ColoriEnum.ANSI_RESET.getANSI_Code() + "\n" );
         }
     }
 
@@ -240,11 +128,4 @@ public class Menu {
         System.out.println("Il prezzo medio del " + getTipo().getDescrizione().toLowerCase() +" è: " + String.format("%.2f", prezzoMedioListePortate() )+ " €");
     }
 
-    public void printListePortateSpecifiche(){
-        System.out.println("\033[0;1m" + "\u001B[33m" + "\"•._.••´¯``•.¸¸.•`La lista di portate scelte è la seguente`•.¸¸.•´´¯`••._.• ".toUpperCase() + "\u001B[0m" + "\n");
-        System.out.println("");
-        for (Portata p : getPortataList()){
-            System.out.println(String.format("%-50s %-80s %9s\n", p.getName().toUpperCase(), " ", String.format("%.2f", p.getPrice()) + " €") + "\033[3m" + p.getDescription() + "\033[0m\n\n");
-        }
-    }
 }

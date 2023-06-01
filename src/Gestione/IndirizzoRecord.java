@@ -1,7 +1,7 @@
 package Gestione;
 
 //TODO :(
-public record IndirizzoRecord(String via, int nC, int cap) {
+public record IndirizzoRecord(String via, int numeroCivico, int cap) {
     public IndirizzoRecord {
     }
 
@@ -11,8 +11,8 @@ public record IndirizzoRecord(String via, int nC, int cap) {
     }
 
     @Override
-    public int nC() {
-        return nC;
+    public int numeroCivico() {
+        return numeroCivico;
     }
 
     @Override
