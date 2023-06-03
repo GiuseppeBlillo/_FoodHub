@@ -3,11 +3,21 @@ package Gestione;
 import Gestione.Cliente;
 import Gestione.Prenotazione;
 
+/**
+ * Classe che gestisce il Tavolo che ha nei propri fields un oggetto Cliente, un int id e un oggetto Prenotazione
+ */
 public class Tavolo {
     private Cliente cliente;
     private int id;
     private Prenotazione prenotazione;
 
+    /**
+     * costruttore che prende in input un oggetto Cliente, un int id e un oggetto Prenotazione e restituisce
+     * un oggetto di classe Tavolo
+     * @param cliente
+     * @param id
+     * @param prenotazione
+     */
     public Tavolo(Cliente cliente, int id, Prenotazione prenotazione) {
         this.cliente = cliente;
         this.id = id;

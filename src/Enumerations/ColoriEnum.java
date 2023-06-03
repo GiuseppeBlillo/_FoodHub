@@ -1,5 +1,8 @@
 package Enumerations;
 
+/**
+ * Classe enum che gestisce i colori utilizzati nella creazione del menu
+ */
 public enum ColoriEnum {
 
     //TODO inserire la descrizione del colore
@@ -53,6 +56,10 @@ public enum ColoriEnum {
 
     private String ANSI_Code;
 
+    /**
+     * Costruttore che prende in imput una Stringa che lo restituuisce come oggetto di classe
+     * @param ANSI_Code
+     */
     ColoriEnum(String ANSI_Code) {
         this.ANSI_Code = ANSI_Code;
     }

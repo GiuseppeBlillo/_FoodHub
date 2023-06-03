@@ -1,5 +1,8 @@
 package Enumerations;
 
+/**
+ * Classe enum che gestisce i vari tipi di cucina
+ */
 public enum TipoDiCucinaEnum {
     ITALIANA("Cucina Tipica Italiana"),
     CINESE("Cucina Tipica Cinese"),
@@ -14,6 +17,10 @@ public enum TipoDiCucinaEnum {
 
     private String descrizioneCucina;
 
+    /**
+     * costruttore della classe TipoDiCucina che prende in imput una Stringa e restituisce un oggetto di classe
+     * @param descrizioneCucina
+     */
     TipoDiCucinaEnum(String descrizioneCucina) {
         this.descrizioneCucina = descrizioneCucina;
     }

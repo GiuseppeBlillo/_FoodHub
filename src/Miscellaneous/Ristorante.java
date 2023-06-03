@@ -7,13 +7,21 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Classe pubblica che gestisce il Ristorante, presenta nei propri fields un String name, un TipoDiCucinaEnum,
+ * una lista di menu e un int coperto
+ */
 public class Ristorante {
     private String name;
     private TipoDiCucinaEnum tipoCucina;
     private List<Menu> menuList;
     private int coperto;
 
-
+    /**
+     * costruttore che prende in input un String name e restituisce un oggetto di classe di tipo Ristorante
+     * e una lista vuota.
+     * @param name
+     */
     public Ristorante(String name) {
         this.name = name;
         this.menuList = new ArrayList<>();
@@ -36,12 +44,6 @@ public class Ristorante {
     public List<Menu> getMenuList() {
         return menuList;
     }
-    public void addMenu(Menu x) {
-        this.menuList.add(x);
-    }
-    public void removeMenu(Menu x) {
-        this.menuList.remove(x);
-    }
 
     public int getCoperto() {
         return coperto;
@@ -50,13 +52,35 @@ public class Ristorante {
     public void setCoperto(int coperto) {
         this.coperto = coperto;
     }
-
     public void setTipoCucina(TipoDiCucinaEnum tipoCucina) {
         this.tipoCucina = tipoCucina;
     }
     public TipoDiCucinaEnum getTipoCucina() {
         return tipoCucina;
     }
+    /**
+     * funzione che aggiunge un menu alla lista menu
+     * @param x
+     */
+    public void addMenu(Menu x) {
+        this.menuList.add(x);
+    }
+
+    /**
+     * funzione che elimina un menu dalla lista menu
+     * @param x
+     */
+    public void removeMenu(Menu x) {
+        this.menuList.remove(x);
+    }
+
+    /**
+     * funzione che serve per calcolare il prezzo medio di un menu del ristorante. Al proprio interno avrà una mappa
+     * vuota per le medie dei menu e un double sommaPrezziMedi indicizzato a 0.0. Dopodichè va a ciclare nella
+     * lista menu, prendendo il prezzo medio delle portate in ogni menu che, sommate tra loro, si ottiene la
+     * sommaPrezziMedi.
+     * @return la mediaDeiMenu
+     */
     public Map<Menu, Double> PrezzoMedioMenuRistorante(){
         Map<Menu,Double> medieDeiMenu = new HashMap<>();
 
@@ -70,6 +94,9 @@ public class Ristorante {
         return medieDeiMenu;
     }
 
+    /**
+     * funzione utilizzata per calcolare la media tra tutti i menu.
+     */
     public void printPrezzoMediodeiMenuRistorante(){
         Map<Menu,Double>medieDeiMenu= PrezzoMedioMenuRistorante();
         for (Map.Entry<Menu,Double> entry : medieDeiMenu.entrySet()){
@@ -81,6 +108,11 @@ public class Ristorante {
         }
     }
 
+    /**
+     * funzione utilizzata per stampare il menu completo del ristorante.Essa cicla all'interno della lista menu
+     * stampando le portate con i rispettivi prezzi in differenti colori, con un prezzo medio di ogni tipologia
+     * di menu presente
+     */
     public void printRistoranteTotale() {
         System.out.println(String.format("\n %-5s %-35s %-50s %-50s\n",  ColoriEnum.YELLOW_BOLD.getANSI_Code(), " ", this.name, ""));
         System.out.print(String.format("\n %-45s %-50s %-50s\n", "", TipoDiCucinaEnum.ITALIANA.getDescrizioneCucina(), " "));
@@ -93,12 +125,12 @@ public class Ristorante {
             menuu.printMenu();
         }
     }
-    //Se vogliamo sapere il coperto usiamo questa funzione
+    /**
+     * funzione utilizzata per conoscere il coperto
+     */
     public void printCoperto(){
         System.out.println(getCoperto() + "€");
     }
-
-
 }
 
 

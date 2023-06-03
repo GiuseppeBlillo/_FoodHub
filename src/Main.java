@@ -4,7 +4,7 @@ import Miscellaneous.Menu;
 import Miscellaneous.Ristorante;
 import ProdottiInVendita.*;
 
-public class Main {
+public class  Main {
     public static void main(String[] args){
 
         Ristorante r1 = new Ristorante("R I S T O R A N T E    D A    L I L L O");

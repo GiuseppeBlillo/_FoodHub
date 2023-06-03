@@ -2,7 +2,7 @@ package Enumerations;
 
 
 /**
- * Enumerato che definisce i tipi
+ * Classe enum che gestisce il tipo di cibo presente nel menu
  */
 public enum TipoEnum {
     CARNE("Menù di Carne"),
@@ -12,7 +12,6 @@ public enum TipoEnum {
     VEGETARIANO("Menù Vegetariano");
 
     private String descrizione;
-
 
     TipoEnum(String descrizione) {
         this.descrizione = descrizione;

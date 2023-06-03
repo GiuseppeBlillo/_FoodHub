@@ -7,6 +7,10 @@ import ProdottiInVendita.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Classe che gestisce la creazione del menù del ristorante. Presenta nei propri fields un String name, String chef
+ * (nome dello chef che propone il menu), avrà un double prezzo medio, un TipoEnum e una lista di Portata
+ */
 public class Menu {
     private String name;
     public String chef;
@@ -14,6 +18,12 @@ public class Menu {
     private TipoEnum tipo;
     private List<Portata> portataList;
 
+    /**
+     * costruttore che prende in input un String name e un TipoEnum e che restituisce un oggetto di classe Menu con
+     * all' interno una lista di Portata vuota
+     * @param name
+     * @param tipo
+     */
     public Menu(String name, TipoEnum tipo) {
         this.name = name;
         this.tipo = tipo;
@@ -40,6 +50,15 @@ public class Menu {
         return prezzoMedioListePortate();
     }
 
+    /**
+     * Funzione che calcola il prezzo medio delle portate. Mi va a creare una prima variabile chiamata double
+     * mediaTotale indicizzata a 0.0. Se la lista portate non è vuota, mi va a
+     * instanziare due variabili: double mediaParziale e un int contaPortata. Mi va a ciclare nella lista Portata
+     * e a seconda del TipoDiPiattoEnum, mi va a prendere il suo prezzo e lo aggiunge alla mediaParziale e aumenta
+     * anche la contaPortata. Alla fine mi va a dividere la MediaParziale per la contaPortata e avremo la nostra
+     * mediaTotale
+     * @return la mediaTotale.
+     */
     public double prezzoMedioListePortate() {
 
         double mediaTotale = 0.0;
@@ -88,6 +107,11 @@ public class Menu {
         return portataList;
     }
 
+    /**
+     * Funzione che serve per aggiungere una portata alla nostra lista di portate con una condizione interna
+     * laddove, se la nostra portata non è presente, viene aggiunta, altrimenti avremo che da errore.
+     * @param p
+     */
     public void addPortata(Portata p) {
         if (!portataList.contains(p)) {
             portataList.add(p);
@@ -96,6 +120,11 @@ public class Menu {
         }
     }
 
+    /**
+     * Funzione che serve per eliminare una portata alla nostra lista di portate con una condizione interna
+     * laddove, se la nostra portata è presente, viene eliminata, altrimenti avremo che da errore.
+     * @param p
+     */
     public void removePortata(Portata p) {
         if (portataList.contains(p)) {
             portataList.remove(p);
@@ -104,6 +133,12 @@ public class Menu {
         }
     }
 
+    /**
+     * funzione che serve per stampare il menu. Essa presenta una condizione dove, qualora non vi sia
+     * una lista portata vuota mi prende tutti i tipi TipoDiPiattoEnum (ANTIPASTO, PRIMO,SECONDO,ECC ECC)
+     * e me li stampa in base a dei colori scelti nella classe ColoriEnum. In seguito, mi va a stampare, tutte
+     * le liste dei tipi di portta
+     */
     public void printMenu() {
         if (!portataList.isEmpty()) {
             System.out.printf("\n%-2s %-50s %-50s", ColoriEnum.GREEN_BOLD.getANSI_Code(), " ", "ANTIPASTI", " " );
@@ -124,6 +159,9 @@ public class Menu {
         }
     }
 
+    /**
+     * funzione che stampa il prezzoMedioListePortate
+     */
     public void printPrezzoMedioListePortate(){
         System.out.println("Il prezzo medio del " + getTipo().getDescrizione().toLowerCase() +" è: " + String.format("%.2f", prezzoMedioListePortate() )+ " €");
     }

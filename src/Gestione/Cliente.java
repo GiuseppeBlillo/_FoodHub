@@ -1,5 +1,9 @@
 package Gestione;
 
+/**
+ * Classe pubblica che gestisce il Cliente e che ha nei propri fields una stringa name, string surname, un record
+ * di indirizzo e un int età.
+ */
 public class Cliente {
     private String name;
     private String surname;
@@ -8,6 +12,12 @@ public class Cliente {
 
     /**
      *
+     * @param name
+     * @param surname
+     * @param age
+     */
+    /**
+     * costruttore che prende in imput i fields della classe Cliente, che restituisce un oggetto di classe Cliente
      * @param name
      * @param surname
      * @param age
