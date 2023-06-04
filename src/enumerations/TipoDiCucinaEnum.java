@@ -1,4 +1,4 @@
-package Enumerations;
+package enumerations;
 
 /**
  * Classe enum che gestisce i vari tipi di cucina

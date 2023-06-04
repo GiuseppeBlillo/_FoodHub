@@ -1,6 +1,6 @@
-package ProdottiInVendita;
+package prodottiinvendita;
 
-import Enumerations.TipoDiPiattoEnum;
+import enumerations.TipoDiPiattoEnum;
 
 /**
  * Classe pubblica che estende la classe Portata utilizzata per gestire l' Antipasto

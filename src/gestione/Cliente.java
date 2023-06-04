@@ -1,4 +1,4 @@
-package Gestione;
+package gestione;
 
 /**
  * Classe pubblica che gestisce il Cliente e che ha nei propri fields una stringa name, string surname, un record

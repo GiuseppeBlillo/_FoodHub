@@ -1,6 +1,6 @@
-package ProdottiInVendita;
+package prodottiinvendita;
 
-import Enumerations.TipoDiPiattoEnum;
+import enumerations.TipoDiPiattoEnum;
 
 /**
  * Classe astratta che estende i propri campi in tutte le classi presenti nel folder ProdottiInVendita.

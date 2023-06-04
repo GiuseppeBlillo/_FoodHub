@@ -1,4 +1,4 @@
-package Gestione;
+package gestione;
 
 /**
  * Classe record che imposta un indirizzo utilizzando in imput una stringa via, un int numero civico

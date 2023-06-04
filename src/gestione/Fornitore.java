@@ -1,4 +1,4 @@
-package Gestione;
+package gestione;
 
 /**
  * Classe pubblica che gestisce il Fornitore che presenta nei propri fields una stringa name e

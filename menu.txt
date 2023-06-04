@@ -1,4 +1,4 @@
-Miscellaneous.ProdottiInVendita.Ristorante da Lillo
+miscellaneous.prodottiinvendita.Ristorante da Lillo
 
 Il menù è vegan
 

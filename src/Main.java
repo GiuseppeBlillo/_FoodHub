@@ -1,8 +1,8 @@
-import Enumerations.TipoEnum;
-import Enumerations.TipoDiPiattoEnum;
-import Miscellaneous.Menu;
-import Miscellaneous.Ristorante;
-import ProdottiInVendita.*;
+import enumerations.TipoEnum;
+import enumerations.TipoDiPiattoEnum;
+import miscellaneous.Menu;
+import miscellaneous.Ristorante;
+import prodottiinvendita.*;
 
 public class  Main {
     public static void main(String[] args){

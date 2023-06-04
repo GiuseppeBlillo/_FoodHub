@@ -1,4 +1,4 @@
-package Gestione;
+package gestione;
 
 /**
  * Classe pubblica che gestisce la Prenotazione. Ha due campi/fields all'interno con un int id e un oggetto Cliente

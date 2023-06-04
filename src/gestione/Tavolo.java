@@ -1,7 +1,4 @@
-package Gestione;
-
-import Gestione.Cliente;
-import Gestione.Prenotazione;
+package gestione;
 
 /**
  * Classe che gestisce il Tavolo che ha nei propri fields un oggetto Cliente, un int id e un oggetto Prenotazione

@@ -1,4 +1,4 @@
-package ProdottiInVendita;
+package prodottiinvendita;
 
 /**
  * Classe pubblica che gestisce l'Ingrediente che presenta nei propri fields un String name e 4 booleani di

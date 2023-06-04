@@ -1,9 +1,9 @@
-package Miscellaneous;
+package miscellaneous;
 
-import Enumerations.ColoriEnum;
-import Enumerations.TipoDiPiattoEnum;
-import Enumerations.TipoEnum;
-import ProdottiInVendita.*;
+import enumerations.ColoriEnum;
+import enumerations.TipoDiPiattoEnum;
+import enumerations.TipoEnum;
+import prodottiinvendita.*;
 import java.util.ArrayList;
 import java.util.List;
 

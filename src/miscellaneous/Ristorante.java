@@ -1,6 +1,6 @@
-package Miscellaneous;
-import Enumerations.ColoriEnum;
-import Enumerations.TipoDiCucinaEnum;
+package miscellaneous;
+import enumerations.ColoriEnum;
+import enumerations.TipoDiCucinaEnum;
 
 import java.util.ArrayList;
 import java.util.HashMap;
