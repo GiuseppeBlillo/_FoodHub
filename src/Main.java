@@ -195,27 +195,8 @@ public class  Main {
 
         r1.addMenu(menuPesce);
         r1.addMenu(menuCarne);
-/*
-
-
-        b3.printPortata();
-
-        pm1.printNomeconSpazioFormattato();
-        menuCarne.addPortata(b18);
-        menuCarne.removePortata(b18);
-        menuCarne.removePortata(b18);
-        menuCarne.printMenu();
-        System.out.println(menuCarne.prezzoMedioListePortate());
-        menuCarne.printPrezzoMedioListePortate();
-
- */
 
         r1.printRistoranteTotale();
-        //menuPesce.printPrezzoMedioListePortate();;
-       // b3.printPortata(ColoriEnum.BLACK, ColoriEnum.BLUE);
-       // r1.setCoperto(2);
-      // r1.printRistoranteTotale();
-
 
     }
 }
