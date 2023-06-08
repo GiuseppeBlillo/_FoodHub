@@ -4,34 +4,34 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Classe pubblica che gestisce il Registro delle prenotazioni del Ristorante. Presenta nei propri fields un int id,
+ * Classe pubblica che gestisce il Registro delle prenotazioni del Ristorante. Presenta nei propri fields un Integer id,
  * una stringa surname, una Lista di prenotazioni
  */
 public class RegistroPrenotazioni {
-    private int id;
+    private Integer id;
     private String surname;
     private List<Prenotazione> prenotazioneList;
     private Tavolo tavolo;
 
     /**
-     * costruttore che prende in imput un int id, String surname e un oggetto Tavolo e restituisce un oggetto di tipo
+     * costruttore che prende in imput un Integer id, String surname e un oggetto Tavolo e restituisce un oggetto di tipo
      * RegistroPrenotazioni
      * @param id
      * @param surname
      * @param tavolo
      */
-    public RegistroPrenotazioni(int id, String surname, Tavolo tavolo) {
+    public RegistroPrenotazioni(Integer id, String surname, Tavolo tavolo) {
         this.id = id;
         this.surname = surname;
         this.prenotazioneList = new ArrayList<>();
         this.tavolo = tavolo;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

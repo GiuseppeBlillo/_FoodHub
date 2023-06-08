@@ -9,13 +9,13 @@ import java.util.Map;
 
 /**
  * Classe pubblica che gestisce il Ristorante, presenta nei propri fields un String name, un TipoDiCucinaEnum,
- * una lista di menu e un int coperto
+ * una lista di menu e un Integer coperto
  */
 public class Ristorante{
     private String name;
     private TipoDiCucinaEnum tipoCucina;
     private List<Menu> menuList;
-    private int coperto;
+    private Integer coperto;
 
     /**
      * costruttore che prende in input un String name e restituisce un oggetto di classe di tipo Ristorante
@@ -45,11 +45,11 @@ public class Ristorante{
         return menuList;
     }
 
-    public int getCoperto() {
+    public Integer getCoperto() {
         return coperto;
     }
 
-    public void setCoperto(int coperto) {
+    public void setCoperto(Integer coperto) {
         this.coperto = coperto;
     }
     public void setTipoCucina(TipoDiCucinaEnum tipoCucina) {
@@ -81,7 +81,7 @@ public class Ristorante{
      * sommaPrezziMedi.
      * @return la mediaDeiMenu
      */
-    public Map<Menu, Double> PrezzoMedioMenuRistorante(){
+    public Map<Menu, Double> prezzoMedioMenuRistorante(){
         Map<Menu,Double> medieDeiMenu = new HashMap<>();
 
         double sommaPrezziMedi = 0.0;
@@ -98,7 +98,7 @@ public class Ristorante{
      * funzione utilizzata per calcolare la media tra tutti i menu.
      */
     public void printPrezzoMediodeiMenuRistorante(){
-        Map<Menu,Double>medieDeiMenu= PrezzoMedioMenuRistorante();
+        Map<Menu,Double>medieDeiMenu= prezzoMedioMenuRistorante();
         for(Map.Entry<Menu,Double> entry : medieDeiMenu.entrySet()){
             Menu menu = entry.getKey();
             double mediaMenu = entry.getValue();

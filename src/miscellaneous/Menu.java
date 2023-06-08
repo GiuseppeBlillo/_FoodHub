@@ -53,7 +53,7 @@ public class Menu{
     /**
      * Funzione che calcola il prezzo medio delle portate. Mi va a creare una prima variabile chiamata double
      * mediaTotale indicizzata a 0.0. Se la lista portate non è vuota, mi va a
-     * instanziare due variabili: double mediaParziale e un int contaPortata. Mi va a ciclare nella lista Portata
+     * instanziare due variabili: double mediaParziale e un Integer contaPortata. Mi va a ciclare nella lista Portata
      * e a seconda del TipoDiPiattoEnum, mi va a prendere il suo prezzo e lo aggiunge alla mediaParziale e aumenta
      * anche la contaPortata. Alla fine mi va a dividere la MediaParziale per la contaPortata e avremo la nostra
      * mediaTotale
@@ -65,7 +65,7 @@ public class Menu{
 
         if (!portataList.isEmpty()){
             double mediaParziale = 0.0;
-            int contaPortata = 0;
+            Integer contaPortata = 0;
             for (Portata p : portataList) {
                 if (p instanceof Antipasto) {
                     mediaParziale += p.getPrice();

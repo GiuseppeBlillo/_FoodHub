@@ -2,13 +2,13 @@ package gestione;
 
 /**
  * Classe pubblica che gestisce il Cliente e che ha nei propri fields una stringa name, string surname, un record
- * di indirizzo e un int età.
+ * di indirizzo e un Integer età.
  */
 public class Cliente {
     private String name;
     private String surname;
     private IndirizzoRecord address;
-    private int age;
+    private Integer age;
 
     /**
      *
@@ -22,7 +22,7 @@ public class Cliente {
      * @param surname
      * @param age
      */
-    public Cliente(String name, String surname, int age) {
+    public Cliente(String name, String surname, Integer age) {
         this.name = name;
         this.surname = surname;
         this.age = age;
@@ -52,11 +52,11 @@ public class Cliente {
         this.address = address;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 }

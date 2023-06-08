@@ -4,29 +4,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Classe che gestisce un elenco di clienti organizzato in una lista e un int id utilizzato per assegnare un
+ * Classe che gestisce un elenco di clienti organizzato in una lista e un Integer id utilizzato per assegnare un
  * numero ai clienti in ordine di inserimento nella lista
  */
 public class ElencoClienti {
-    private int id;
+    private Integer id;
     private List<Cliente> clienteList;
 
     /**
-     * costruttore che prende in imput un int id e una lista che restituisce un oggetto di classe ElencoClienti con
+     * costruttore che prende in imput un Integer id e una lista che restituisce un oggetto di classe ElencoClienti con
      * una lista vuota all'interno
      * @param id
      * @param clienteList
      */
-    public ElencoClienti(int id, List<Cliente> clienteList) {
+    public ElencoClienti(Integer id, List<Cliente> clienteList) {
         this.id = id;
         this.clienteList = new ArrayList<>();
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
