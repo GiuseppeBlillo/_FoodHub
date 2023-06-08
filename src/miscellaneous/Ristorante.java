@@ -11,7 +11,7 @@ import java.util.Map;
  * Classe pubblica che gestisce il Ristorante, presenta nei propri fields un String name, un TipoDiCucinaEnum,
  * una lista di menu e un int coperto
  */
-public class Ristorante {
+public class Ristorante{
     private String name;
     private TipoDiCucinaEnum tipoCucina;
     private List<Menu> menuList;
@@ -22,7 +22,7 @@ public class Ristorante {
      * e una lista vuota.
      * @param name
      */
-    public Ristorante(String name) {
+    public Ristorante(String name){
         this.name = name;
         this.menuList = new ArrayList<>();
     }
@@ -85,7 +85,7 @@ public class Ristorante {
         Map<Menu,Double> medieDeiMenu = new HashMap<>();
 
         double sommaPrezziMedi = 0.0;
-        for (Menu menu : menuList) {
+        for(Menu menu : menuList) {
             sommaPrezziMedi = menu.prezzoMedioListePortate();
 
             double mediaMenu = sommaPrezziMedi;
@@ -99,7 +99,7 @@ public class Ristorante {
      */
     public void printPrezzoMediodeiMenuRistorante(){
         Map<Menu,Double>medieDeiMenu= PrezzoMedioMenuRistorante();
-        for (Map.Entry<Menu,Double> entry : medieDeiMenu.entrySet()){
+        for(Map.Entry<Menu,Double> entry : medieDeiMenu.entrySet()){
             Menu menu = entry.getKey();
             double mediaMenu = entry.getValue();
 
@@ -113,12 +113,12 @@ public class Ristorante {
      * stampando le portate con i rispettivi prezzi in differenti colori, con un prezzo medio di ogni tipologia
      * di menu presente
      */
-    public void printRistoranteTotale() {
+    public void printRistoranteTotale(){
         System.out.println(String.format("\n %-5s %-35s %-50s %-50s\n",  ColoriEnum.YELLOW_BOLD.getANSI_Code(), " ", this.name, ""));
         System.out.print(String.format("\n %-45s %-50s %-50s\n", "", TipoDiCucinaEnum.ITALIANA.getDescrizioneCucina(), " "));
         System.out.print(ColoriEnum.ANSI_RESET.getANSI_Code());
 
-        for (Menu menuu : menuList) {
+        for(Menu menuu : menuList){
             System.out.print(String.format(" \n\n%-5s %-48s %-50s %-50s\n", ColoriEnum.PURPLE_BOLD.getANSI_Code() ," ", menuu.getName().toUpperCase(), " "));
             menuu.printPrezzoMedioListePortate();
             System.out.print(ColoriEnum.ANSI_RESET.getANSI_Code());
