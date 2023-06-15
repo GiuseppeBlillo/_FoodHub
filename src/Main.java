@@ -4,8 +4,11 @@ import miscellaneous.Menu;
 import miscellaneous.Ristorante;
 import prodottiinvendita.*;
 
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
 public class  Main {
-    public static void main(String[] args){
+    public static void main(String[] args) throws SQLException {
 
         Ristorante r1 = new Ristorante("R I S T O R A N T E    D A    L I L L O");
 
@@ -196,7 +199,17 @@ public class  Main {
         r1.addMenu(menuPesce);
         r1.addMenu(menuCarne);
 
-        r1.printRistoranteTotale();
+        //r1.printRistoranteTotale();
+
+        DaoPortata.insertPortata("Insalata di Mare", "Insalata di mare con seppie, gamberi e verdure", 12.00, "Antipasto");
+        DaoPortata.insertPortata("Cozze E Vongole", "Impepata di cozze e vongole", 10.00, "Antipasto");
+        DaoPortata.insertPortata("Scampi", "Crudità di scampi, 3 pz", 8.00, "Antipasto");
+        DaoPortata.insertPortata("Gratinato di Pesce", "Pescato del giorno al gratin, con aggiunta di scampi", 14.00, "Antipasto");
+        DaoPortata.insertPortata("Frittura Mista di Mare", "Frittura di mare con calamaretti, gamberetti e cipolla fritta", 10.00, "Antipasto");
+        DaoPortata.insertPortata("Salmone e Alici Marinate", "Un filetto di salmone fresco affumicato servito con alici marinate", 9.00, "Antipasto");
+
+
+
 
     }
 }
