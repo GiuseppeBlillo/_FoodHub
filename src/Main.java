@@ -4,6 +4,7 @@ import miscellaneous.Menu;
 import miscellaneous.Ristorante;
 import prodottiinvendita.*;
 
+import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class  Main {
@@ -195,6 +196,10 @@ public class  Main {
         menuPesce.addPortata(b22);
         menuPesce.addPortata(b23);
 
-        DaoIngrediente.printAllIngredient();
+        r1.addMenu(menuPesce);
+        r1.addMenu(menuCarne);
+
+        //r1.printRistoranteTotale();
+
     }
 }
