@@ -6,6 +6,7 @@ public class DaoPortata {
     private static final String USER = "freedb_Lillo";
     private static final String PASS = "JXa#57@@UThE6*k";
 
+
     public static void createTable() throws SQLException {
 
         Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
@@ -53,14 +54,32 @@ public class DaoPortata {
         String printQuery = """
                 SELECT * from Portata;
                 """;
-
         ResultSet resultSet = statement.executeQuery(printQuery);
 
         int i = 0;
 
         while (resultSet.next()) {
             i = i +1;
-            System.out.println(" name " + resultSet.getString("name") + i);
+            System.out.println(resultSet.getString("name"));
+
+        }
+
+        conn.close();
+
+    }
+
+    public static void printAllPortateType(String s) throws SQLException {
+        Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+        Statement statement = conn.createStatement();
+
+        String printQuery = "SELECT * from Portata WHERE dish_type = '"+ s + "';";
+        ResultSet resultSet = statement.executeQuery(printQuery);
+
+        int i = 0;
+
+        while (resultSet.next()) {
+            i = i +1;
+            System.out.println(resultSet.getString("name") + " " + resultSet.getString("price")+ "€");
 
 
         }
@@ -161,13 +180,6 @@ public class DaoPortata {
     }
     */
 
-    public static void main(String[] args) throws SQLException {
-
-        DaoPortata.printAllPortate();
-        DaoPortata.createTable();
-        DaoPortata.insertPortata("Spaghetti allo scoglio", "Deliziosi spaghetti allo scoglio", 14, "PRIMO");
-
-
-    }}
+    }
 
 

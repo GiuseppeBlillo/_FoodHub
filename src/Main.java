@@ -1,10 +1,10 @@
 import enumerations.TipoEnum;
 import enumerations.TipoDiPiattoEnum;
+import miscellaneous.DaoRistorante;
 import miscellaneous.Menu;
 import miscellaneous.Ristorante;
 import prodottiinvendita.*;
 
-import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class  Main {
@@ -200,6 +200,14 @@ public class  Main {
         r1.addMenu(menuCarne);
 
         //r1.printRistoranteTotale();
+
+        //DaoPortata.insertPortata("Solaia Antinori 1999/2008", "Cabernet Sauvignon, Sangiovese, Cabernet Franc San Casciano - Toscana", 350.00, "Bevanda");
+        //DaoRistorante.insertRistorante("Ristorante da Pietro", 3, "Messicana");
+
+        DaoPortata.printAllPortateType("Primo");
+
+
+
 
     }
 }
