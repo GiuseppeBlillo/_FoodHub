@@ -24,12 +24,12 @@ public class  Main {
         menuCarne.addPortata(a9);
         menuCarne.addPortata(a10);
 
-        Primo pt1 = new Primo("Carbonara", "Pasta con uovo, formaggio e guanciale", 10.00, TipoDiPiattoEnum.PRIMO, CotturaPastaEnum.AL_DENTE);
-        Primo pt2 = new Primo("Cacio e Pepe", "Pasta condita con cacio e pepe", 10.00, TipoDiPiattoEnum.PRIMO, CotturaPastaEnum.MEDIA_COTTURA);
-        Primo pt3 = new Primo("Tagliatelle di Cinghiale", "Tagliatelle al ragu di cinghiale e formaggio", 12.00, TipoDiPiattoEnum.PRIMO, CotturaPastaEnum.MEDIA_COTTURA);
-        Primo pt4 = new Primo("Tagliatelle ai Funghi Porcini", "Tagliatelle con porcini e una grattuggiata di formaggio", 14.00, TipoDiPiattoEnum.PRIMO, CotturaPastaEnum.MEDIA_COTTURA);
-        Primo pt5 = new Primo("Gnocchetti alla Campidanese", "Gnocchi con ragù di salsiccia e pecorino sardo", 15.00,TipoDiPiattoEnum.PRIMO, CotturaPastaEnum.AL_DENTE);
-        Primo pt6 = new Primo("Tortelli di Manzo", "Tortelli allo stracotto di manzo e radice di Daikon", 16.00, TipoDiPiattoEnum.PRIMO, CotturaPastaEnum.BEN_COTTA);
+        Primo pt1 = new Primo("Carbonara", "Pasta con uovo, formaggio e guanciale", 10.00, TipoDiPiattoEnum.PRIMO);
+        Primo pt2 = new Primo("Cacio e Pepe", "Pasta condita con cacio e pepe", 10.00, TipoDiPiattoEnum.PRIMO);
+        Primo pt3 = new Primo("Tagliatelle di Cinghiale", "Tagliatelle al ragu di cinghiale e formaggio", 12.00, TipoDiPiattoEnum.PRIMO);
+        Primo pt4 = new Primo("Tagliatelle ai Funghi Porcini", "Tagliatelle con porcini e una grattuggiata di formaggio", 14.00, TipoDiPiattoEnum.PRIMO);
+        Primo pt5 = new Primo("Gnocchetti alla Campidanese", "Gnocchi con ragù di salsiccia e pecorino sardo", 15.00,TipoDiPiattoEnum.PRIMO);
+        Primo pt6 = new Primo("Tortelli di Manzo", "Tortelli allo stracotto di manzo e radice di Daikon", 16.00, TipoDiPiattoEnum.PRIMO);
 
         menuCarne.addPortata(pt1);
         menuCarne.addPortata(pt2);
@@ -69,12 +69,12 @@ public class  Main {
         menuPesce.addPortata(a7);
 
 
-        Primo pm1 = new Primo("Spaghetti al cartoccio", "Spaghetti al cartoccio ai frutti di mare", 14.00, TipoDiPiattoEnum.PRIMO, CotturaPastaEnum.MEDIA_COTTURA);
-        Primo pm2 = new Primo("Ravioli", "Ravioli di branzino con bottarga di tonno", 14.00, TipoDiPiattoEnum.PRIMO, CotturaPastaEnum.BEN_COTTA);
-        Primo pm3 = new Primo("Cavatelli", "Cavatelli al ragu di gambero e pistacchio", 14.00, TipoDiPiattoEnum.PRIMO, CotturaPastaEnum.BEN_COTTA);
-        Primo pm4 = new Primo("Linguine allo scoglio", "Linguine con cozze, vongole, cannolicchi, gamberi e calamari", 16.00, TipoDiPiattoEnum.PRIMO, CotturaPastaEnum.AL_DENTE);
-        Primo pm5 = new Primo("Linguine vongole E Limone", "Linguine con vongole con grattata di scorza di limone", 12.00, TipoDiPiattoEnum.PRIMO, CotturaPastaEnum.AL_DENTE);
-        Primo pm6 = new Primo("Mezzi paccheri con Gambero rosso", "Mezzi paccheri con gambero rosso e crema di zucchine.", 20.00, TipoDiPiattoEnum.PRIMO, CotturaPastaEnum.MEDIA_COTTURA);
+        Primo pm1 = new Primo("Spaghetti al cartoccio", "Spaghetti al cartoccio ai frutti di mare", 14.00, TipoDiPiattoEnum.PRIMO);
+        Primo pm2 = new Primo("Ravioli", "Ravioli di branzino con bottarga di tonno", 14.00, TipoDiPiattoEnum.PRIMO);
+        Primo pm3 = new Primo("Cavatelli", "Cavatelli al ragu di gambero e pistacchio", 14.00, TipoDiPiattoEnum.PRIMO);
+        Primo pm4 = new Primo("Linguine allo scoglio", "Linguine con cozze, vongole, cannolicchi, gamberi e calamari", 16.00, TipoDiPiattoEnum.PRIMO);
+        Primo pm5 = new Primo("Linguine vongole E Limone", "Linguine con vongole con grattata di scorza di limone", 12.00, TipoDiPiattoEnum.PRIMO);
+        Primo pm6 = new Primo("Mezzi paccheri con Gambero rosso", "Mezzi paccheri con gambero rosso e crema di zucchine.", 20.00, TipoDiPiattoEnum.PRIMO);
 
         menuPesce.addPortata(pm1);
         menuPesce.addPortata(pm2);
@@ -95,13 +95,13 @@ public class  Main {
         menuPesce.addPortata(sm4);
         menuPesce.addPortata(sm5);
 
-        Dessert d1 = new Dessert("Cassata siciliana", "Leggerissimo dolce siciliano", 4.00, TipoDiPiattoEnum.DESSERT, TemperaturaDessertEnum.TEMPERATURA_AMBIENTE);
-        Dessert d2 = new Dessert("Cannolo siciliano", "Dolce con chantillea, pistacchio e granella di pistacchio", 5.00, TipoDiPiattoEnum.DESSERT, TemperaturaDessertEnum.TEMPERATURA_AMBIENTE);
-        Dessert d3 = new Dessert("Semifreddo al Torrone", "Morbido torrone con ricattura di cacao", 6.00, TipoDiPiattoEnum.DESSERT, TemperaturaDessertEnum.TEMPERATURA_AMBIENTE);
-        Dessert d4 = new Dessert("Tortino al cioccolato", "Tortino al cioccolato con cuore fondente caldo", 9.00, TipoDiPiattoEnum.DESSERT, TemperaturaDessertEnum.CALDO);
-        Dessert d5 = new Dessert("Tiramisu", "Tiramisu classico", 9.00, TipoDiPiattoEnum.DESSERT, TemperaturaDessertEnum.FREDDO);
-        Dessert d6 = new Dessert("Millefoglie", "Millefoglie, crema pasticcera, frutta fresca", 9.00, TipoDiPiattoEnum.DESSERT, TemperaturaDessertEnum.FREDDO);
-        Dessert d7 = new Dessert("Seada Sarda", "Seada tradizionale sarda, miele, croccante alle mandorle", 9.00, TipoDiPiattoEnum.DESSERT, TemperaturaDessertEnum.TEMPERATURA_AMBIENTE);
+        Dessert d1 = new Dessert("Cassata siciliana", "Leggerissimo dolce siciliano", 4.00, TipoDiPiattoEnum.DESSERT);
+        Dessert d2 = new Dessert("Cannolo siciliano", "Dolce con chantillea, pistacchio e granella di pistacchio", 5.00, TipoDiPiattoEnum.DESSERT);
+        Dessert d3 = new Dessert("Semifreddo al Torrone", "Morbido torrone con ricattura di cacao", 6.00, TipoDiPiattoEnum.DESSERT);
+        Dessert d4 = new Dessert("Tortino al cioccolato", "Tortino al cioccolato con cuore fondente caldo", 9.00, TipoDiPiattoEnum.DESSERT);
+        Dessert d5 = new Dessert("Tiramisu", "Tiramisu classico", 9.00, TipoDiPiattoEnum.DESSERT);
+        Dessert d6 = new Dessert("Millefoglie", "Millefoglie, crema pasticcera, frutta fresca", 9.00, TipoDiPiattoEnum.DESSERT);
+        Dessert d7 = new Dessert("Seada Sarda", "Seada tradizionale sarda, miele, croccante alle mandorle", 9.00, TipoDiPiattoEnum.DESSERT);
 
         menuCarne.addPortata(d1);
         menuCarne.addPortata(d2);
