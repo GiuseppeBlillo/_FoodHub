@@ -14,13 +14,13 @@ public class DaoPortata {
         Statement statement = conn.createStatement();
 
         String createQuery = """
-                CREATE TABLE IF NOT EXISTS Portata(
-                portata_id INT NOT NULL AUTO_INCREMENT,
-                name VARCHAR(255) UNIQUE,
-                description VARCHAR(255),
-                price DOUBLE,
-                dish_type ENUM('Antipasto', 'Primo', 'Secondo', 'Dessert', 'Bevanda'),
-                PRIMARY KEY (portata_id)
+                create table if not exists Portata(
+                portata_id int auto_increment,
+                nome varchar(255),
+                descrizione varchar(255),
+                prezzo double,
+                tipo enum('Antipasto', 'Primo', 'Secondo', 'Dessert', 'Bevanda'),
+                primary key (portata_id)
                 );
                 """;
         statement.executeUpdate(createQuery);
@@ -30,11 +30,11 @@ public class DaoPortata {
         System.out.println("nuova tabella creata");
     }
 
-    public static void insertPortata(String name, String description, double price, String dish_type) throws SQLException {
+    public static void insertPortata(String nome, String descrizione, String tipo ,double prezzo) throws SQLException {
         Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
         Statement statement = conn.createStatement();
 
-        String insertQuery = "INSERT INTO Portata (name, description, price, dish_type) VALUES ('" + name + "', '" + description + "', " + price + ", '"+dish_type+"' );";
+        String insertQuery = "insert into Portata (nome, descrizione, tipo, prezzo) values ('" + nome + "', '" + descrizione + "', '" + tipo + "', " + prezzo + " );";
 
         statement.executeUpdate(insertQuery);
 
@@ -52,7 +52,7 @@ public class DaoPortata {
         Statement statement = conn.createStatement();
 
         String printQuery = """
-                SELECT * from Portata;
+                select * from Portata;
                 """;
         ResultSet resultSet = statement.executeQuery(printQuery);
 
@@ -60,7 +60,7 @@ public class DaoPortata {
 
         while (resultSet.next()) {
             i = i +1;
-            System.out.println(resultSet.getString("name"));
+            System.out.println(resultSet.getString("nome"));
 
         }
 
@@ -72,14 +72,14 @@ public class DaoPortata {
         Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
         Statement statement = conn.createStatement();
 
-        String printQuery = "SELECT * from Portata WHERE dish_type = '"+ s + "';";
+        String printQuery = "select * from Portata where tipo = '"+ s + "';";
         ResultSet resultSet = statement.executeQuery(printQuery);
 
         int i = 0;
 
         while (resultSet.next()) {
             i = i +1;
-            System.out.println(resultSet.getString("name") + " " + resultSet.getString("price")+ "€");
+            System.out.println(resultSet.getString("nome") + " " + resultSet.getString("prezzo")+ "€");
 
 
         }

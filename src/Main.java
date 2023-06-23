@@ -201,10 +201,10 @@ public class  Main {
 
         //r1.printRistoranteTotale();
 
-        //DaoPortata.insertPortata("Solaia Antinori 1999/2008", "Cabernet Sauvignon, Sangiovese, Cabernet Franc San Casciano - Toscana", 350.00, "Bevanda");
+        //DaoPortata.insertPortata("Solaia Antinori 1999/2008", "Cabernet Sauvignon, Sangiovese, Cabernet Franc San Casciano - Toscana", "Bevanda" , 350.00);
         //DaoRistorante.insertRistorante("Ristorante da Pietro", 3, "Messicana");
 
-        DaoPortata.printAllPortateType("Primo");
+        //DaoPortata.printAllPortateType("Primo");
 
 
 
